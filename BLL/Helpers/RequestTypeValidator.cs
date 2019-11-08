@@ -1,4 +1,5 @@
-﻿using BLL.Models;
+﻿using System.Collections.Generic;
+using BLL.Models;
 using DAL.Constants;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -18,14 +19,14 @@ namespace BLL.Helpers
             }
         }
 
-        public static PaymentRepositoryConstants.TransactionSelectorType GetTransactions_TypeChecker(string type)
+        public static PaymentServiceConstants.PaymentType PaymentChecker(string type)
         {
             switch (type)
             {
-                case PaymentServiceConstants.USER: return PaymentRepositoryConstants.TransactionSelectorType.UserId;
-                case PaymentServiceConstants.VENDOR: return  PaymentRepositoryConstants.TransactionSelectorType.VendorId;
-                case PaymentServiceConstants.ORDER: return PaymentRepositoryConstants.TransactionSelectorType.OrderId;
-                default: return PaymentRepositoryConstants.TransactionSelectorType.Default;
+                case PaymentServiceConstants.AUTH: return PaymentServiceConstants.PaymentType.Auth;
+                case PaymentServiceConstants.CHARGE: return PaymentServiceConstants.PaymentType.Charge;
+                case PaymentServiceConstants.CAPTURE: return PaymentServiceConstants.PaymentType.Capture;
+                default: return PaymentServiceConstants.PaymentType.Default;
             }
         }
 

@@ -8,7 +8,7 @@ namespace BLL.Helpers.Mapping
 {
     public class MappingPaymentFailed<T> : IMappingTransaction 
     {
-        public TransactionDTO Transaction(string transactionType, PaymentModel payment, dynamic response)
+        public TransactionDTO Map(string transactionType, PaymentModel payment, dynamic response)
         {
             return new TransactionDTO()
             {

@@ -5,6 +5,6 @@ namespace BLL.Helpers.Mapping.Interfaces
 {
     public interface IMappingTransaction
     {
-        TransactionDTO Transaction(string transactionType, PaymentModel payment, dynamic response);
+        TransactionDTO Map(string transactionType, PaymentModel payment, dynamic response);
     }
 }

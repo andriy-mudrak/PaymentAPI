@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DAL.Constants;
 using DAL.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using PaymentAPI.DBModels;
 
 namespace DAL.Repositories
@@ -18,24 +19,30 @@ namespace DAL.Repositories
             _context = context;
         }
 
-        public async Task CreateTransaction(TransactionDTO transaction)
+        public async Task<TransactionDTO> CreateTransaction(TransactionDTO transaction)
         {
             await _context.Transactions.AddAsync(transaction);
             _context.SaveChanges();
+
+            return transaction;
         }
 
-        public async Task CreateTransaction(IEnumerable<TransactionDTO> transaction)
+        public async Task<IEnumerable<TransactionDTO>> CreateTransaction(IEnumerable<TransactionDTO> transaction)
         {
             await _context.Transactions.AddRangeAsync(transaction);
             _context.SaveChanges();
+            return transaction;
         }
 
-        public async Task<IEnumerable<TransactionDTO>> GetTransactions(PaymentRepositoryConstants.TransactionSelectorType type, int id, DateTime? startDate = null, DateTime? endDate = null)
-        {
-            var beginingDate = startDate == null ? SqlDateTime.MinValue.Value : startDate;
-            var endingDate = endDate == null ? SqlDateTime.MaxValue.Value : endDate;
 
-            var transactions = await TransactionSelector(type, id, beginingDate, endingDate);
+        //треба передавати сюди експрешин, якщо старт дейт і енддейт то не додавати його в цей експрешин
+        // і обов'ящково треба робити 
+        public async Task<IEnumerable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            var expr = _context.Transactions.Where(a => startDate < a.TransactionTime && a.TransactionTime < endDate)
+                .Select(a => a);
+
+            var transactions = await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
 
             return transactions;
         }
@@ -66,19 +73,26 @@ namespace DAL.Repositories
                     select user).FirstOrDefault();
         }
 
-        private async Task<IEnumerable<TransactionDTO>> TransactionSelector(PaymentRepositoryConstants.TransactionSelectorType type, int id, DateTime? startDate, DateTime? endDate)
+        private async Task<IEnumerable<TransactionDTO>> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
         {
-            switch (type)
-            {
-                case PaymentRepositoryConstants.TransactionSelectorType.OrderId:
-                    return PaymentRepositoryConstants.orderQuery(_context, type, id, startDate, endDate);
-                case PaymentRepositoryConstants.TransactionSelectorType.VendorId:
-                    return PaymentRepositoryConstants.vendorQuery(_context, type, id, startDate, endDate);
-                case PaymentRepositoryConstants.TransactionSelectorType.UserId:
-                    return PaymentRepositoryConstants.userQuery(_context, type, id, startDate, endDate);
-                default:
-                    return PaymentRepositoryConstants.defaultQuery(_context, type, id, startDate, endDate);
-            }
+            var query = _context.Transactions.Select(a => a);
+            if (orderId != 0) query = query.Where(a => (a.OrderId == orderId));
+            if (userId != 0) query = query.Where(a => (a.UserId == userId));
+            if (vendorId != 0) query = query.Where(a => (a.VendorId == vendorId));
+            if (startDate != null) query = query.Where(a => startDate < a.TransactionTime);
+            if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
+
+            return query.ToList();
+            //db.Transactions.Where(a => (a.UserId == id) && (startDate < a.TransactionTime && a.TransactionTime < endDate)).Select(a => a)
+            //case PaymentRepositoryConstants.TransactionSelectorType.OrderId:
+            //        return PaymentRepositoryConstants.orderQuery(_context, type, id, startDate, endDate);
+            //    case PaymentRepositoryConstants.TransactionSelectorType.VendorId:
+            //        return PaymentRepositoryConstants.vendorQuery(_context, type, id, startDate, endDate);
+            //    case PaymentRepositoryConstants.TransactionSelectorType.UserId:
+            //        return PaymentRepositoryConstants.userQuery(_context, type, id, startDate, endDate);
+            //    default:
+            //        return PaymentRepositoryConstants.defaultQuery(_context, type, id, startDate, endDate);
         }
     }
 }
+

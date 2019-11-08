@@ -21,12 +21,13 @@ namespace BLL.Helpers
         public const string STRIPE_SUCCEEDED = "succeeded";
         public const string PAYMENT_FAILED = "payment failed";
 
-        public static readonly Dictionary<string, IPaymentExecute> PAYMENT_OPERATIONS = new Dictionary<string, IPaymentExecute>()
+        public enum PaymentType
         {
-            {AUTH, new PaymentAuthentication() },
-            {CHARGE, new PaymentCharge() },
-            {CAPTURE, new PaymentCapture() }
-        };
+            Auth,
+            Charge,
+            Capture,
+            Default
+        }
 
         public static readonly Dictionary<string, IMappingTransaction> MAPPING = new Dictionary<string, IMappingTransaction>()
         {

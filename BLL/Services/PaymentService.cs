@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using BLL.Helpers;
@@ -14,25 +16,35 @@ namespace BLL.Services
     {
         private readonly IPaymentRepository _paymentRepository;
         private readonly IMapper _mapper;
-        public PaymentService(IPaymentRepository paymentRepository, IMapper mapper)
+        private readonly IPaymentProvider _paymentProvider;
+        public PaymentService(IPaymentRepository paymentRepository, IMapper mapper, IPaymentProvider paymentProvider)
         {
             _paymentRepository = paymentRepository;
             _mapper = mapper;
+            _paymentProvider = paymentProvider;
         }
 
-        public async Task Pay(string type, PaymentModel payment)
+        public async Task<IEnumerable<TransactionModel>> Pay(PaymentServiceConstants.PaymentType type, PaymentModel payment)
         {
-            await PaymentServiceConstants.PAYMENT_OPERATIONS[type].Execute(_paymentRepository, payment);
+            var response = await _paymentProvider.GetPaymentOperation(type).Execute(payment);
+            return _mapper.Map<IEnumerable<TransactionDTO>, IEnumerable<TransactionModel>>(response);
         }
-        
-        public async Task<IEnumerable<TransactionModel>> GetTransactions(string type = null, int id = 0, DateTime? startDate = null, DateTime? endDate = null)
+
+        public async Task<IEnumerable<TransactionModel>> GetTransactions(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
         {
-            var filterType = RequestTypeValidator.GetTransactions_TypeChecker(type);
-            var model = await _paymentRepository.GetTransactions(filterType, id, startDate, endDate);
+            //var filterType = RequestTypeValidator.TypeChecker(type);
+            var model = await _paymentRepository.GetTransactions(orderId, userId, vendorId, startDate, endDate);
             return _mapper.Map<IEnumerable<TransactionDTO>, IEnumerable<TransactionModel>>(model);
         }
 
-        private void SaveCard(string email, string cardToken, int userId) 
+        //public async Task<IEnumerable<TransactionModel>> GetTransactions(string type = null, int id = 0, DateTime? startDate = null, DateTime? endDate = null)
+        //{
+        //    var filterType = RequestTypeValidator.TypeChecker(type);
+        //    var model = await _paymentRepository.GetTransactions(filterType, id, startDate, endDate);
+        //    return _mapper.Map<IEnumerable<TransactionDTO>, IEnumerable<TransactionModel>>(model);
+        //}
+        //private Expression CreateExpression()
+        private void SaveCard(string email, string cardToken, int userId)
         {
             var isUserExist = _paymentRepository.GetUser(userId);
 

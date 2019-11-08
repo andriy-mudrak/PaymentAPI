@@ -16,6 +16,8 @@ namespace DAL.Constants
             Default
         }
 
+        //фільтрацію закинути в BLL а  тут зробити фільтр який буде приймати метод що треба робити
+        //
         public static Func<PaymentsDbContext, TransactionSelectorType, int, DateTime?, DateTime?, IEnumerable<TransactionDTO>> userQuery = EF.CompileQuery(
             (PaymentsDbContext db, TransactionSelectorType type, int id, DateTime? startDate, DateTime? endDate)
                 => db.Transactions.Where(a => (a.UserId == id) && (startDate < a.TransactionTime && a.TransactionTime < endDate)).Select(a => a)

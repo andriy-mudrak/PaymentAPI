@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using BLL.Models;
 using DAL.Repositories.Interfaces;
+using PaymentAPI.DBModels;
 
 namespace BLL.Services.Interfaces
 {
     public interface IPaymentExecute
     {
-        Task Execute(IPaymentRepository _paymentRepository, PaymentModel payment);
+        Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment);
     }
 }

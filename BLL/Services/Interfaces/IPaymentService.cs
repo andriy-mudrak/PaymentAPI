@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BLL.Helpers;
 using BLL.Models;
 
 namespace BLL.Services.Interfaces
 {
     public interface IPaymentService
     {
-        Task Pay(string type, PaymentModel request);
-        Task<IEnumerable<TransactionModel>> GetTransactions(string type = null, int id = 0, DateTime? startDate = null, DateTime? endDate = null);
+        Task<IEnumerable<TransactionModel>> Pay(PaymentServiceConstants.PaymentType type, PaymentModel payment);
+        Task<IEnumerable<TransactionModel>> GetTransactions(int orderId,  int userId,  int vendorId, DateTime? startDate, DateTime? endDate);
     }
 }

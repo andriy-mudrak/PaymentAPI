@@ -1,15 +1,23 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
+using PaymentAPI.DBModels;
 using Stripe;
 
 namespace BLL.Services
 {
     public class PaymentAuthentication : IPaymentExecute
     {
-        public async Task Execute(IPaymentRepository _paymentRepository, PaymentModel payment)
+        private readonly IPaymentRepository _paymentRepository;
+
+        public PaymentAuthentication(IPaymentRepository paymentRepository)
+        {
+            _paymentRepository = paymentRepository;
+        }
+        public async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
             var options = new ChargeCreateOptions
             {
@@ -20,14 +28,16 @@ namespace BLL.Services
             };
             var service = new ChargeService();
 
-            var response = RetryHelpers.RetryIfThrown(() =>
+            var response = RetryHelpers.RetryIfThrown(async () =>
             {
-                var result = service.Create(options);
+                var result = await service.CreateAsync(options);
+
                 return PaymentServiceConstants.MAPPING[PaymentServiceConstants.STRIPE_SUCCEEDED]
-                    .Transaction(PaymentServiceConstants.AUTH, payment, result);
+                    .Map(PaymentServiceConstants.AUTH, payment, result);
 
             }, PaymentServiceConstants.AUTH, payment, PaymentServiceConstants.STRIPE_SUCCEEDED);
-            await _paymentRepository.CreateTransaction(response);
+
+            return await _paymentRepository.CreateTransaction(response);
         }
     }
 }

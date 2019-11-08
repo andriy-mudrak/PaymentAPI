@@ -28,7 +28,7 @@ namespace PaymentAPI.Controllers
             var payment = new PaymentModel
             {
                 CardToken = stripeToken,
-                Amount = 100,
+                Amount = 500,
                 Email = stripeEmail,
                 OrderId = 1,
                 UserId = 1,
@@ -36,9 +36,9 @@ namespace PaymentAPI.Controllers
                 VendorId = 1,
                 Currency = "usd"
             };
-            _paymentService.Pay(PaymentServiceConstants.CHARGE, payment);
+            _paymentService.Pay(PaymentServiceConstants.PaymentType.Charge, payment);
 
-            return Ok();
+            return Ok(_paymentService.Pay(PaymentServiceConstants.PaymentType.Charge, payment));
         }
 
     }

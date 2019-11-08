@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using AutoMapper;
+using BLL.Helpers;
 using BLL.Helpers.Mapping;
 using BLL.Services;
 using BLL.Services.Interfaces;
@@ -24,7 +27,7 @@ namespace PaymentAPI
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -38,9 +41,30 @@ namespace PaymentAPI
             StripeConfiguration.ApiKey = Configuration["Stripe:SecretKey"];
             
             services.AddDbContext<PaymentsDbContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings:DefaultConnection").Value));
+            services.AddTransient<IPaymentProvider, PaymentProvider>();
             services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IPaymentRepository, PaymentRepository>();
-          
+
+
+            services.AddScoped<PaymentAuthentication>();
+            services.AddScoped<PaymentCapture>();
+            services.AddScoped<PaymentCharge>();
+
+            services.AddTransient<ServiceResolver>(serviceProvider => key =>
+            {
+                switch (key)
+                {
+                    case PaymentServiceConstants.PaymentType.Auth:
+                        return serviceProvider.GetService<PaymentAuthentication>();
+                    case PaymentServiceConstants.PaymentType.Capture:
+                        return serviceProvider.GetService<PaymentCapture>();
+                    case PaymentServiceConstants.PaymentType.Charge:
+                        return serviceProvider.GetService<PaymentCharge>();
+                    default:
+                        throw new KeyNotFoundException();
+                }
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

@@ -14,7 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
+using Newtonsoft.Json;
 using Stripe;
 
 namespace PaymentAPI
@@ -38,7 +39,9 @@ namespace PaymentAPI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddAutoMapper(options => options.AddProfile<AutoMapperProfile>(), typeof(Startup));
+            
             StripeConfiguration.ApiKey = Configuration["Stripe:SecretKey"];
+            StripeConfiguration.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             
             services.AddDbContext<PaymentsDbContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings:DefaultConnection").Value));
             services.AddTransient<IPaymentProvider, PaymentProvider>();

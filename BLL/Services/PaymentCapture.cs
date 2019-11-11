@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Helpers;
@@ -6,7 +7,7 @@ using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Constants;
 using DAL.Repositories.Interfaces;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 using Stripe;
 
 namespace BLL.Services
@@ -27,11 +28,13 @@ namespace BLL.Services
 
             var orderInfo = new PaymentModel { UserId = customer.UserId, VendorId = customer.VendorId, OrderId = customer.OrderId };
 
+            if (!customer.TransactionType.Equals(PaymentServiceConstants.AUTH)) throw new Exception("Server can not find auth transaction");//TODO: треба ще ексепшин хендлінг
+
             var response = RetryHelpers.RetryIfThrown(async () =>
             {
-                var responseResult = await service.CaptureAsync(customer.ExternalId, null);
+                var result = await service.CaptureAsync(customer.ExternalId, null);
                 return PaymentServiceConstants.MAPPING[PaymentServiceConstants.STRIPE_SUCCEEDED]
-                    .Map(PaymentServiceConstants.CAPTURE, orderInfo, responseResult);
+                    .Map(PaymentServiceConstants.CAPTURE, orderInfo, result, result.Created);
 
             }, PaymentServiceConstants.CAPTURE, payment, PaymentServiceConstants.STRIPE_SUCCEEDED);
 

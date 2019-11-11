@@ -4,9 +4,9 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Threading.Tasks;
 using DAL.Constants;
+using DAL.DBModels;
 using DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using PaymentAPI.DBModels;
 
 namespace DAL.Repositories
 {
@@ -21,16 +21,19 @@ namespace DAL.Repositories
 
         public async Task<TransactionDTO> CreateTransaction(TransactionDTO transaction)
         {
+
             await _context.Transactions.AddAsync(transaction);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return transaction;
         }
 
         public async Task<IEnumerable<TransactionDTO>> CreateTransaction(IEnumerable<TransactionDTO> transaction)
         {
+
             await _context.Transactions.AddRangeAsync(transaction);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
             return transaction;
         }
 
@@ -83,15 +86,6 @@ namespace DAL.Repositories
             if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
 
             return query.ToList();
-            //db.Transactions.Where(a => (a.UserId == id) && (startDate < a.TransactionTime && a.TransactionTime < endDate)).Select(a => a)
-            //case PaymentRepositoryConstants.TransactionSelectorType.OrderId:
-            //        return PaymentRepositoryConstants.orderQuery(_context, type, id, startDate, endDate);
-            //    case PaymentRepositoryConstants.TransactionSelectorType.VendorId:
-            //        return PaymentRepositoryConstants.vendorQuery(_context, type, id, startDate, endDate);
-            //    case PaymentRepositoryConstants.TransactionSelectorType.UserId:
-            //        return PaymentRepositoryConstants.userQuery(_context, type, id, startDate, endDate);
-            //    default:
-            //        return PaymentRepositoryConstants.defaultQuery(_context, type, id, startDate, endDate);
         }
     }
 }

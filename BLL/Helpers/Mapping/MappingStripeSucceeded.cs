@@ -2,14 +2,14 @@
 using BLL.Helpers.Mapping.Interfaces;
 using BLL.Models;
 using Newtonsoft.Json;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 using Stripe;
 
 namespace BLL.Helpers.Mapping
 {
     public class MappingStripeSucceeded<T> : IMappingTransaction where T : Charge
     {
-        public TransactionDTO Map(string transactionType, PaymentModel payment, dynamic response)
+        public TransactionDTO Map(string transactionType, PaymentModel payment, dynamic response, DateTime time)
         {
             return new TransactionDTO()
             {
@@ -21,10 +21,9 @@ namespace BLL.Helpers.Mapping
                 UserId = payment.UserId,
                 VendorId = payment.VendorId,
                 Metadata = JsonConvert.SerializeObject(payment),
-                Response = JsonConvert.SerializeObject(response),
-                TransactionTime = DateTime.Now,
+                Response = response.ToJson(),
+                TransactionTime = time,
                 TransactionType = transactionType,
-                Description = "didn`t find it in response"
             };
         }
     }

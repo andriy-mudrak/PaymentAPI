@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace PaymentAPI.DBModels
+namespace DAL.DBModels
 {
     public partial class PaymentsDbContext : DbContext
     {
@@ -23,29 +26,40 @@ namespace PaymentAPI.DBModels
             modelBuilder.Entity<TransactionDTO>(entity =>
             {
                 entity.HasKey(e => e.TransactionId)
-                    .HasName("PK__Transact__55433A4B9FB4AEC4");
+                    .HasName("PK__Transacctions_$Id");
 
-                entity.Property(e => e.TransactionId).HasColumnName("TransactionID");
+                entity.HasIndex(e => new { e.UserId, e.VendorId, e.ExternalId, e.OrderId })
+                    .HasName("in_Transactions_$orderId$userId$vendorId$externalId");
 
-                entity.Property(e => e.Description).HasMaxLength(50);
+                entity.Property(e => e.TransactionId)
+                    .HasColumnName("TransactionID");
 
-                entity.Property(e => e.ExternalId)
+                    entity.Property(e => e.ExternalId)
+                    .IsRequired()
                     .HasColumnName("ExternalID")
                     .HasMaxLength(50);
 
-                entity.Property(e => e.Instrument).HasMaxLength(10);
+                entity.Property(e => e.Instrument)
+                    .IsRequired()
+                    .HasMaxLength(20);
 
-                entity.Property(e => e.Metadata).HasMaxLength(1000);
+                entity.Property(e => e.Metadata)
+                    .IsRequired()
+                    .HasMaxLength(1000);
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
-                entity.Property(e => e.Response).HasMaxLength(4000);
+                entity.Property(e => e.Response).IsRequired().HasMaxLength(4000); ;
 
-                entity.Property(e => e.Status).HasMaxLength(20);
+                entity.Property(e => e.Status)
+                    .IsRequired()
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.TransactionTime).HasColumnType("datetime");
 
-                entity.Property(e => e.TransactionType).HasMaxLength(20);
+                entity.Property(e => e.TransactionType)
+                    .IsRequired()
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -55,7 +69,7 @@ namespace PaymentAPI.DBModels
             modelBuilder.Entity<UserDTO>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__Users__1788CCACA2DA0F4F");
+                    .HasName("PK__Users__Id");
 
                 entity.Property(e => e.UserId)
                     .HasColumnName("UserID")
@@ -65,7 +79,7 @@ namespace PaymentAPI.DBModels
                     .HasColumnName("ExternalID")
                     .HasMaxLength(50);
 
-                entity.Property(e => e.UserCardToken).HasMaxLength(50);
+                entity.Property(e => e.UserToken).HasMaxLength(50);
             });
         }
     }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BLL.Models;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 
 namespace BLL.Helpers.Mapping
 {

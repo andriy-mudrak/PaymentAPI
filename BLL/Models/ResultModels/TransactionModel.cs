@@ -9,7 +9,6 @@ namespace BLL.Models
         public string TransactionType { get; set; }
         public long Amount { get; set; }
         public string Status { get; set; }
-        public string Description { get; set; }
         public string Metadata { get; set; }
         public DateTime TransactionTime { get; set; }
         public int UserId { get; set; }

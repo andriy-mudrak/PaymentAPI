@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 using Stripe;
 
 namespace BLL.Services
@@ -31,9 +32,8 @@ namespace BLL.Services
             var response = RetryHelpers.RetryIfThrown(async () =>
             {
                 var result = await service.CreateAsync(options);
-
                 return PaymentServiceConstants.MAPPING[PaymentServiceConstants.STRIPE_SUCCEEDED]
-                    .Map(PaymentServiceConstants.AUTH, payment, result);
+                    .Map(PaymentServiceConstants.AUTH, payment, result, result.Created);
 
             }, PaymentServiceConstants.AUTH, payment, PaymentServiceConstants.STRIPE_SUCCEEDED);
 

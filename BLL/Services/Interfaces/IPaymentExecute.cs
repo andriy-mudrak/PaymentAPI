@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using BLL.Models;
 using DAL.Repositories.Interfaces;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 
 namespace BLL.Services.Interfaces
 {

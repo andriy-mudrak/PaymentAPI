@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DAL.Constants;
-using PaymentAPI.DBModels;
+using DAL.DBModels;
 
 namespace DAL.Repositories.Interfaces
 {

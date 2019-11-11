@@ -13,7 +13,7 @@ namespace BLL.Helpers.Mapping
         {
             return new TransactionDTO()
             {
-                Amount = response.Amount,
+                Amount = payment.Amount,
                 Status = response.Status,
                 ExternalId = response.Id,
                 Instrument = response.PaymentMethodDetails.Type,

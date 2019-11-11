@@ -26,7 +26,7 @@ namespace BLL.Services
             var customer = _paymentRepository.GetTransactions(payment.OrderId, payment.UserId).Result.LastOrDefault();
             var service = new ChargeService();
 
-            var orderInfo = new PaymentModel { UserId = customer.UserId, VendorId = customer.VendorId, OrderId = customer.OrderId };
+            var orderInfo = new PaymentModel { UserId = customer.UserId, VendorId = customer.VendorId, OrderId = customer.OrderId, Amount = customer.Amount};
 
             if (!customer.TransactionType.Equals(PaymentServiceConstants.AUTH)) throw new Exception("Server can not find auth transaction");//TODO: треба ще ексепшин хендлінг
 

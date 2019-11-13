@@ -45,8 +45,7 @@ namespace BLL.Services
 
             }, PaymentServiceConstants.PaymentType.Charge, payment, PaymentServiceConstants.isSucceeded.Succeeded);
 
-            var test = await _paymentRepository.CreateTransactions(transaction);
-            return test;
+            return await _paymentRepository.CreateTransactions(transaction); ;
         }
     }
 }

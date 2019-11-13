@@ -28,7 +28,7 @@ namespace PaymentAPI.Controllers
                 var paymentType = RequestTypeValidator.PaymentChecker(type);
                 if (paymentType == PaymentServiceConstants.PaymentType.Default) return BadRequest("Please check type of your entity");
 
-                return Ok(await _paymentService.Pay(paymentType, payment););
+                return Ok(await _paymentService.Pay(paymentType, payment));
             }
             else return BadRequest("Please check your entity");
         }

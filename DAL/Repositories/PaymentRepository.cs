@@ -19,35 +19,18 @@ namespace DAL.Repositories
             _context = context;
         }
 
-        public async Task<TransactionDTO> CreateTransaction(TransactionDTO transaction)
+        public async Task<IEnumerable<TransactionDTO>> CreateTransactions(IEnumerable<TransactionDTO> transaction)
         {
-
-            await _context.Transactions.AddAsync(transaction);
-            await _context.SaveChangesAsync();
-
-            return transaction;
-        }
-
-        public async Task<IEnumerable<TransactionDTO>> CreateTransaction(IEnumerable<TransactionDTO> transaction)
-        {
-
             await _context.Transactions.AddRangeAsync(transaction);
             await _context.SaveChangesAsync();
 
             return transaction;
         }
 
-
-        //треба передавати сюди експрешин, якщо старт дейт і енддейт то не додавати його в цей експрешин
-        // і обов'ящково треба робити 
         public async Task<IEnumerable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            var expr = _context.Transactions.Where(a => startDate < a.TransactionTime && a.TransactionTime < endDate)
-                .Select(a => a);
-
             var transactions = await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
-
-            return transactions;
+            return await transactions.ToListAsync();
         }
 
         public void CreateUser(UserDTO user)
@@ -76,7 +59,7 @@ namespace DAL.Repositories
                     select user).FirstOrDefault();
         }
 
-        private async Task<IEnumerable<TransactionDTO>> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
+        private async Task<IQueryable<TransactionDTO>> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
         {
             var query = _context.Transactions.Select(a => a);
             if (orderId != 0) query = query.Where(a => (a.OrderId == orderId));
@@ -85,7 +68,7 @@ namespace DAL.Repositories
             if (startDate != null) query = query.Where(a => startDate < a.TransactionTime);
             if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
 
-            return query.ToList();
+            return query;
         }
     }
 }

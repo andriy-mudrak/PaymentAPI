@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using AutoMapper;
 using BLL.Helpers;
+using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping;
+using BLL.Helpers.Mapping.Interfaces;
 using BLL.Services;
 using BLL.Services.Interfaces;
 using DAL.Repositories;
@@ -44,10 +46,30 @@ namespace PaymentAPI
             StripeConfiguration.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             
             services.AddDbContext<PaymentsDbContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings:DefaultConnection").Value));
+
+            services.AddTransient<IMappingProvider, MappingProvider>();
+            services.AddTransient<IRetryHelper, RetryHelper>();
             services.AddTransient<IPaymentProvider, PaymentProvider>();
+
+
             services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IPaymentRepository, PaymentRepository>();
 
+            services.AddScoped<MappingStripeSucceeded<Charge>>();
+            services.AddScoped<MappingPaymentFailed<string>>();
+
+            services.AddTransient<MappingResolver>(serviceProvider => key =>
+            {
+                switch (key)
+                {
+                    case PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded:
+                        return serviceProvider.GetService<MappingStripeSucceeded<Charge>>();
+                    case PaymentServiceConstants.PaymentMappingType.Failed:
+                        return serviceProvider.GetService<MappingPaymentFailed<string>>();
+                    default:
+                        throw new KeyNotFoundException();
+                }
+            });
 
             services.AddScoped<PaymentAuthentication>();
             services.AddScoped<PaymentCapture>();
@@ -86,6 +108,7 @@ namespace PaymentAPI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+           
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

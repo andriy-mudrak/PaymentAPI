@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -20,25 +21,23 @@ namespace PaymentAPI.Controllers
 
         // POST: api/Payment
         [HttpPost]
-        public ActionResult<IEnumerable<TransactionModel>> Post([FromQuery]string type, [FromBody] PaymentModel payment)
+        public async Task<IActionResult> Post([FromQuery]string type, [FromBody] PaymentModel payment)
         {
             if (RequestTypeValidator.TypeValidation(type, payment))
             {
                 var paymentType = RequestTypeValidator.PaymentChecker(type);
                 if (paymentType == PaymentServiceConstants.PaymentType.Default) return BadRequest("Please check type of your entity");
 
-                var response = _paymentService.Pay(paymentType, payment);
-                return Ok(response.Result);
+                return Ok(await _paymentService.Pay(paymentType, payment););
             }
             else return BadRequest("Please check your entity");
         }
 
         [HttpGet]
-        public IActionResult Get([FromQuery]int orderId = 0, [FromQuery] int userId = 0, [FromQuery] int vendorId = 0,
+        public async Task<IActionResult> Get([FromQuery]int orderId = 0, [FromQuery] int userId = 0, [FromQuery] int vendorId = 0,
             [FromQuery] DateTime? startDate = null, [FromQuery] DateTime? endDate = null)
         {
-
-            return Ok(_paymentService.GetTransactions(orderId, userId, vendorId, startDate, endDate).Result);
+            return Ok(await _paymentService.GetTransactions(orderId, userId, vendorId, startDate, endDate));
         }
     }
 }

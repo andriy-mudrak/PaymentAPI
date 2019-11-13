@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using BLL.Helpers.Mapping;
 using BLL.Helpers.Mapping.Interfaces;
 using BLL.Services;
@@ -13,14 +14,12 @@ namespace BLL.Helpers
         public const string CHARGE = "charge";
         public const string CAPTURE = "capture";
         public const string REFUND = "refund";
+        public const string DEFAULT = "default";
 
         public const string ORDER = "order";
         public const string VENDOR = "vendor";
         public const string USER = "user";
-
-        public const string STRIPE_SUCCEEDED = "succeeded";
-        public const string PAYMENT_FAILED = "payment failed";
-
+        
         public enum PaymentType
         {
             Auth,
@@ -29,10 +28,15 @@ namespace BLL.Helpers
             Default
         }
 
-        public static readonly Dictionary<string, IMappingTransaction> MAPPING = new Dictionary<string, IMappingTransaction>()
+        public enum PaymentMappingType
         {
-            {STRIPE_SUCCEEDED, new MappingStripeSucceeded<Charge>()},
-            {PAYMENT_FAILED, new MappingPaymentFailed<string>()},
-        };
+            Stripe_Succeeded,
+            Failed
+        }
+
+        public enum isSucceeded
+        {
+            Succeeded,
+        }
     }
 }

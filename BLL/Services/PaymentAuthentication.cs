@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using BLL.Helpers;
+using BLL.Helpers.Interfaces;
+using BLL.Helpers.Mapping.Interfaces;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
@@ -13,11 +16,16 @@ namespace BLL.Services
     public class PaymentAuthentication : IPaymentExecute
     {
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IMappingProvider _mappingProvider;
+        private readonly IRetryHelper _retryHelper;
 
-        public PaymentAuthentication(IPaymentRepository paymentRepository)
+        public PaymentAuthentication(IPaymentRepository paymentRepository, IMappingProvider mappingProvider, IRetryHelper retryHelper)
         {
             _paymentRepository = paymentRepository;
+            _mappingProvider = mappingProvider;
+            _retryHelper = retryHelper;
         }
+
         public async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
             var options = new ChargeCreateOptions
@@ -29,15 +37,16 @@ namespace BLL.Services
             };
             var service = new ChargeService();
 
-            var response = RetryHelpers.RetryIfThrown(async () =>
+            var transaction = await _retryHelper.RetryIfThrown(async () =>
             {
                 var result = await service.CreateAsync(options);
-                return PaymentServiceConstants.MAPPING[PaymentServiceConstants.STRIPE_SUCCEEDED]
-                    .Map(PaymentServiceConstants.AUTH, payment, result, result.Created);
 
-            }, PaymentServiceConstants.AUTH, payment, PaymentServiceConstants.STRIPE_SUCCEEDED);
+                return _mappingProvider.GetMappingOperation(PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded)
+                    .Map(PaymentServiceConstants.PaymentType.Auth, payment, result, result.Created);
 
-            return await _paymentRepository.CreateTransaction(response);
+            }, PaymentServiceConstants.PaymentType.Auth, payment, PaymentServiceConstants.isSucceeded.Succeeded);
+
+            return await _paymentRepository.CreateTransactions(transaction);
         }
     }
 }

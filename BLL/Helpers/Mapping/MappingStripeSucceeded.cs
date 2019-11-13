@@ -9,7 +9,7 @@ namespace BLL.Helpers.Mapping
 {
     public class MappingStripeSucceeded<T> : IMappingTransaction where T : Charge
     {
-        public TransactionDTO Map(string transactionType, PaymentModel payment, dynamic response, DateTime time)
+        public TransactionDTO Map(PaymentServiceConstants.PaymentType transactionType, PaymentModel payment, dynamic response, DateTime time)
         {
             return new TransactionDTO()
             {
@@ -23,7 +23,7 @@ namespace BLL.Helpers.Mapping
                 Metadata = JsonConvert.SerializeObject(payment),
                 Response = response.ToJson(),
                 TransactionTime = time,
-                TransactionType = transactionType,
+                TransactionType = transactionType.ToString(),
             };
         }
     }

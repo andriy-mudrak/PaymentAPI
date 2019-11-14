@@ -29,13 +29,12 @@ namespace DAL.Repositories
 
         public async Task<IQueryable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await TransactionSelector(orderId, userId, vendorId, startDate, endDate); 
+            return await TransactionsSelector(orderId, userId, vendorId, startDate, endDate); 
         }
 
         public async Task<TransactionDTO> GetLastTransaction(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            var transactions = await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
-            return await transactions.LastOrDefaultAsync();
+            return  await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
         }
         public void CreateUser(UserDTO user)
         {
@@ -63,7 +62,7 @@ namespace DAL.Repositories
                     select user).FirstOrDefault();
         }
 
-        private async Task<IQueryable<TransactionDTO>> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
+        private async Task<IQueryable<TransactionDTO>> TransactionsSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
         {
             var query = _context.Transactions.Select(a => a);
             if (orderId != 0) query = query.Where(a => (a.OrderId == orderId));
@@ -73,6 +72,17 @@ namespace DAL.Repositories
             if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
 
             return query;
+        }
+        private async Task<TransactionDTO> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
+        {
+            var query = _context.Transactions.Select(a => a);
+            if (orderId != 0) query = query.Where(a => (a.OrderId == orderId));
+            if (userId != 0) query = query.Where(a => (a.UserId == userId));
+            if (vendorId != 0) query = query.Where(a => (a.VendorId == vendorId));
+            if (startDate != null) query = query.Where(a => startDate < a.TransactionTime);
+            if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
+
+            return query.LastOrDefault();
         }
     }
 }

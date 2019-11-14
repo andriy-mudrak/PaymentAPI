@@ -35,30 +35,25 @@ namespace DAL.DBModels
                     .HasColumnName("TransactionID");
 
                     entity.Property(e => e.ExternalId)
-                    .IsRequired()
-                    .HasColumnName("ExternalID")
+                        .HasColumnName("ExternalID")
                     .HasMaxLength(50);
 
                 entity.Property(e => e.Instrument)
-                    .IsRequired()
                     .HasMaxLength(20);
 
                 entity.Property(e => e.Metadata)
-                    .IsRequired()
                     .HasMaxLength(1000);
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
-                entity.Property(e => e.Response).IsRequired().HasMaxLength(4000); ;
+                entity.Property(e => e.Response).HasMaxLength(4000); ;
 
                 entity.Property(e => e.Status)
-                    .IsRequired()
                     .HasMaxLength(20);
 
                 entity.Property(e => e.TransactionTime).HasColumnType("datetime");
 
                 entity.Property(e => e.TransactionType)
-                    .IsRequired()
                     .HasMaxLength(20);
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");

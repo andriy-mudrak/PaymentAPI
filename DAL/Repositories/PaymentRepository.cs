@@ -27,12 +27,16 @@ namespace DAL.Repositories
             return transaction;
         }
 
-        public async Task<IEnumerable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<IQueryable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            var transactions = await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
-            return await transactions.ToListAsync();
+            return await TransactionSelector(orderId, userId, vendorId, startDate, endDate); 
         }
 
+        public async Task<TransactionDTO> GetLastTransaction(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            var transactions = await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
+            return await transactions.LastOrDefaultAsync();
+        }
         public void CreateUser(UserDTO user)
         {
 

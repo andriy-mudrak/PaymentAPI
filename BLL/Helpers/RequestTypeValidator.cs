@@ -26,6 +26,7 @@ namespace BLL.Helpers
                 case PaymentServiceConstants.AUTH: return PaymentServiceConstants.PaymentType.Auth;
                 case PaymentServiceConstants.CHARGE: return PaymentServiceConstants.PaymentType.Charge;
                 case PaymentServiceConstants.CAPTURE: return PaymentServiceConstants.PaymentType.Capture;
+                case PaymentServiceConstants.REFUND: return PaymentServiceConstants.PaymentType.Refund;
                 default: return PaymentServiceConstants.PaymentType.Default;
             }
         }

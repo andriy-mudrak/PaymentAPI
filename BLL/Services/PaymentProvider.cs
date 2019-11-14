@@ -17,7 +17,8 @@ namespace BLL.Services
             {
                 {PaymentServiceConstants.PaymentType.Auth, serviceAccessor(PaymentServiceConstants.PaymentType.Auth)},
                 {PaymentServiceConstants.PaymentType.Charge, serviceAccessor(PaymentServiceConstants.PaymentType.Charge)},
-                {PaymentServiceConstants.PaymentType.Capture, serviceAccessor(PaymentServiceConstants.PaymentType.Capture)}
+                {PaymentServiceConstants.PaymentType.Capture, serviceAccessor(PaymentServiceConstants.PaymentType.Capture)},
+                {PaymentServiceConstants.PaymentType.Refund, serviceAccessor(PaymentServiceConstants.PaymentType.Refund)}
             };
         }
 

@@ -17,6 +17,7 @@ namespace BLL.Helpers.Mapping
             MAPPING = new Dictionary<PaymentServiceConstants.PaymentMappingType, IMappingTransaction>()
             {
                 {PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded)},
+                {PaymentServiceConstants.PaymentMappingType.Stripe_Refund, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Stripe_Refund)},
                 {PaymentServiceConstants.PaymentMappingType.Failed, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Failed)},
             };
         }

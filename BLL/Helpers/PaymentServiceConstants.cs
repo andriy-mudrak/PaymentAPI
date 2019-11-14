@@ -25,12 +25,14 @@ namespace BLL.Helpers
             Auth,
             Charge,
             Capture,
+            Refund,
             Default
         }
 
         public enum PaymentMappingType
         {
             Stripe_Succeeded,
+            Stripe_Refund,
             Failed
         }
 

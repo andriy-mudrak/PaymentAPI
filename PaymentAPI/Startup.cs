@@ -30,7 +30,7 @@ namespace PaymentAPI
         }
 
         public IConfiguration Configuration { get; }
-        
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -41,10 +41,10 @@ namespace PaymentAPI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddAutoMapper(options => options.AddProfile<AutoMapperProfile>(), typeof(Startup));
-            
+
             StripeConfiguration.ApiKey = Configuration["Stripe:SecretKey"];
             StripeConfiguration.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-            
+
             services.AddDbContext<PaymentsDbContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings:DefaultConnection").Value));
 
             services.AddTransient<IMappingProvider, MappingProvider>();
@@ -56,6 +56,7 @@ namespace PaymentAPI
             services.AddTransient<IPaymentRepository, PaymentRepository>();
 
             services.AddScoped<MappingStripeSucceeded<Charge>>();
+            services.AddScoped<MappingStripeRefund<Refund>>();
             services.AddScoped<MappingPaymentFailed<string>>();
 
             services.AddTransient<MappingResolver>(serviceProvider => key =>
@@ -64,6 +65,8 @@ namespace PaymentAPI
                 {
                     case PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded:
                         return serviceProvider.GetService<MappingStripeSucceeded<Charge>>();
+                    case PaymentServiceConstants.PaymentMappingType.Stripe_Refund:
+                        return serviceProvider.GetService<MappingStripeRefund<Refund>>();
                     case PaymentServiceConstants.PaymentMappingType.Failed:
                         return serviceProvider.GetService<MappingPaymentFailed<string>>();
                     default:
@@ -74,6 +77,7 @@ namespace PaymentAPI
             services.AddScoped<PaymentAuthentication>();
             services.AddScoped<PaymentCapture>();
             services.AddScoped<PaymentCharge>();
+            services.AddScoped<PaymentRefund>();
 
             services.AddTransient<ServiceResolver>(serviceProvider => key =>
             {
@@ -85,6 +89,8 @@ namespace PaymentAPI
                         return serviceProvider.GetService<PaymentCapture>();
                     case PaymentServiceConstants.PaymentType.Charge:
                         return serviceProvider.GetService<PaymentCharge>();
+                    case PaymentServiceConstants.PaymentType.Refund:
+                        return serviceProvider.GetService<PaymentRefund>();
                     default:
                         throw new KeyNotFoundException();
                 }
@@ -103,10 +109,10 @@ namespace PaymentAPI
             {
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-           
+
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

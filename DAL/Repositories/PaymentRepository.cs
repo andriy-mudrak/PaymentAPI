@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.Linq;
 using System.Threading.Tasks;
-using DAL.Constants;
 using DAL.DBModels;
 using DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -29,39 +27,51 @@ namespace DAL.Repositories
 
         public async Task<IQueryable<TransactionDTO>> GetTransactions(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
         {
-            return await TransactionsSelector(orderId, userId, vendorId, startDate, endDate); 
+            return await TransactionsSelector(orderId, userId, vendorId, startDate, endDate);
         }
 
-        public async Task<TransactionDTO> GetLastTransaction(int orderId = 0, int userId = 0, int vendorId = 0, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<TransactionDTO> GetLastTransaction(int orderId)
         {
-            return  await TransactionSelector(orderId, userId, vendorId, startDate, endDate);
+            return await _context.Transactions.Select(a => a).Where(x => x.OrderId == orderId).LastOrDefaultAsync();
         }
-        public void CreateUser(UserDTO user)
+        public async Task<TransactionDTO> GetLastTransaction(int orderId, string transactionType)
         {
+            return await _context.Transactions.Select(a => a).Where(x => x.TransactionType == transactionType && x.OrderId == orderId).LastOrDefaultAsync();
+        }
+        public async Task<UserDTO> CreateUser(UserDTO user)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            return user;
         }
 
-        public void UpdateUser(UserDTO user)
+        public async Task<UserDTO> UpdateUser(UserDTO user)
         {
             _context.Users.Update(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+            return user;
         }
 
-        public UserDTO GetUser(int userId)
+        public async Task<UserDTO> GetUser(int userId)
         {
-            return (from user in _context.Users
-                    where user.UserId == userId
-                    select user).FirstOrDefault();
+            return await (from user in _context.Users
+                          where user.UserId == userId
+                          select user).FirstOrDefaultAsync();
         }
-        public UserDTO GetUserByExternalId(string externalId)
+        public async Task<UserDTO> GetUserByExternalId(string externalId)
         {
-            return (from user in _context.Users
-                    where user.ExternalId == externalId
-                    select user).FirstOrDefault();
+            return await (from user in _context.Users
+                          where user.ExternalId == externalId
+                          select user).FirstOrDefaultAsync();
         }
-
+        public async Task<UserDTO> GetUserByEmail(string email)
+        {
+            return await (from user in _context.Users
+                          where user.Email == email
+                          select user).FirstOrDefaultAsync();
+        }
         private async Task<IQueryable<TransactionDTO>> TransactionsSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
         {
             var query = _context.Transactions.Select(a => a);
@@ -72,17 +82,6 @@ namespace DAL.Repositories
             if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
 
             return query;
-        }
-        private async Task<TransactionDTO> TransactionSelector(int orderId, int userId, int vendorId, DateTime? startDate, DateTime? endDate)
-        {
-            var query = _context.Transactions.Select(a => a);
-            if (orderId != 0) query = query.Where(a => (a.OrderId == orderId));
-            if (userId != 0) query = query.Where(a => (a.UserId == userId));
-            if (vendorId != 0) query = query.Where(a => (a.VendorId == vendorId));
-            if (startDate != null) query = query.Where(a => startDate < a.TransactionTime);
-            if (endDate != null) query = query.Where(a => endDate < a.TransactionTime);
-
-            return query.LastOrDefault();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Helpers.Interfaces;
@@ -9,27 +7,18 @@ using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.DBModels;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using Stripe;
 
 namespace BLL.Services
 {
     public class PaymentRefund : IPaymentExecute
     {
-        private readonly IPaymentRepository _paymentRepository;
-        private readonly IMappingProvider _mappingProvider;
-        private readonly IRetryHelper _retryHelper;
-
-
         public PaymentRefund(IPaymentRepository paymentRepository, IMappingProvider mappingProvider, IRetryHelper retryHelper)
+            : base(paymentRepository, mappingProvider, retryHelper)
         {
-            _paymentRepository = paymentRepository;
-            _mappingProvider = mappingProvider;
-            _retryHelper = retryHelper;
         }
 
-        public async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
+        public override async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
             var customer = await _paymentRepository.GetLastTransaction(payment.OrderId);
 

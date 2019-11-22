@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BLL.Helpers;
+using Newtonsoft.Json;
+using Serilog;
+using Serilog.Context;
 
 namespace PaymentAPI.Controllers
 {
@@ -21,16 +23,25 @@ namespace PaymentAPI.Controllers
 
         // POST: api/Payment
         [HttpPost]
-        public async Task<IActionResult> Post([FromQuery]string type, [FromBody] PaymentModel payment)
+        public async Task<IActionResult> Post([FromQuery] string type, [FromBody] PaymentModel payment)
         {
-            if (RequestTypeValidator.TypeValidation(type, payment))
+            using (LogContext.PushProperty("OrderId", payment.OrderId))
+            using (LogContext.PushProperty("UserId", payment.UserId))
+            using (LogContext.PushProperty("VendorId", payment.VendorId))
+            using (LogContext.PushProperty("Type", type))
+            using (LogContext.PushProperty("Amount", payment.Amount))
             {
-                var paymentType = RequestTypeValidator.PaymentChecker(type);
-                if (paymentType == PaymentServiceConstants.PaymentType.Default) return BadRequest("Please check type of your entity");
+                Log.Information($"Payment info {JsonConvert.SerializeObject(payment)}");
+                if (RequestTypeValidator.TypeValidation(type, payment))
+                {
+                    var paymentType = RequestTypeValidator.PaymentChecker(type);
+                    if (paymentType == PaymentServiceConstants.PaymentType.Default)
+                        return BadRequest("Please check type of your entity");
 
-                return Ok(await _paymentService.Pay(paymentType, payment));
+                    return Ok(await _paymentService.Pay(paymentType, payment));
+                }
+                else return BadRequest("Please check your entity");
             }
-            else return BadRequest("Please check your entity");
         }
 
         [HttpGet]

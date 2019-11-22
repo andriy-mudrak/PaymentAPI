@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Helpers.Interfaces;
@@ -8,35 +7,30 @@ using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.DBModels;
-using Newtonsoft.Json;
 using Stripe;
 
 namespace BLL.Services
 {
     public class PaymentCharge : IPaymentExecute
     {
-        private readonly IPaymentRepository _paymentRepository;
-        private readonly IMappingProvider _mappingProvider;
-        private readonly IRetryHelper _retryHelper;
-
-
         public PaymentCharge(IPaymentRepository paymentRepository, IMappingProvider mappingProvider, IRetryHelper retryHelper)
+            : base(paymentRepository, mappingProvider, retryHelper)
         {
-            _paymentRepository = paymentRepository;
-            _mappingProvider = mappingProvider;
-            _retryHelper = retryHelper;
         }
-
-        public async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
+        public override async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
+            UserDTO user;
+            user = await _paymentRepository.GetUserByEmail(payment.Email);
+            user = user ?? await CreateUser(payment);
+
             var options = new ChargeCreateOptions
             {
                 Amount = payment.Amount,
                 Currency = payment.Currency,
-                Source = payment.CardToken
+                Customer = user.ExternalId,
             };
             var service = new ChargeService();
-          
+
             var transaction = await _retryHelper.RetryIfThrown(async () =>
             {
                 var result = await service.CreateAsync(options);
@@ -45,7 +39,7 @@ namespace BLL.Services
 
             }, PaymentServiceConstants.PaymentType.Charge, payment, PaymentServiceConstants.isSucceeded.Succeeded);
 
-            return await _paymentRepository.CreateTransactions(transaction); ;
+            return await _paymentRepository.CreateTransactions(transaction);
         }
     }
 }

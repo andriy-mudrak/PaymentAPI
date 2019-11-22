@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Services.Interfaces;
 
 namespace BLL.Services
 {
     public delegate IPaymentExecute ServiceResolver(PaymentServiceConstants.PaymentType key);
-
     public class PaymentProvider : IPaymentProvider
     {
         private readonly Dictionary<PaymentServiceConstants.PaymentType, IPaymentExecute> PAYMENT_OPERATIONS;

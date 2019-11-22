@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using BLL.Helpers.Mapping.Interfaces;
-using BLL.Services;
-using BLL.Services.Interfaces;
-using Stripe;
 
 namespace BLL.Helpers.Mapping
 {

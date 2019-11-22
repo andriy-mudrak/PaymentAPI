@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using BLL.Helpers;
 using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping;
 using BLL.Helpers.Mapping.Interfaces;
+using BLL.Helpers.UserUpdating;
+using BLL.Helpers.UserUpdating.Interfaces;
 using BLL.Services;
 using BLL.Services.Interfaces;
 using DAL.Repositories;
@@ -18,6 +19,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DAL.DBModels;
 using Newtonsoft.Json;
+using PaymentAPI.Middleware;
+using Serilog;
 using Stripe;
 
 namespace PaymentAPI
@@ -26,6 +29,10 @@ namespace PaymentAPI
     {
         public Startup(IConfiguration configuration)
         {
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                .CreateLogger();
+
             Configuration = configuration;
         }
 
@@ -106,10 +113,12 @@ namespace PaymentAPI
                 app.UseDeveloperExceptionPage();
             }
             else
-            {
+            { 
                 app.UseHsts();
             }
-            
+            app.UseSerilogRequestLogging();
+
+            app.UseExceptionMiddleware();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

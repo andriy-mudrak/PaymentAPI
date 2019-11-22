@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using BLL.Helpers.Mapping;
-using BLL.Helpers.Mapping.Interfaces;
-using BLL.Services;
-using BLL.Services.Interfaces;
-using Stripe;
-
-namespace BLL.Helpers
+﻿namespace BLL.Helpers
 {
     public static class PaymentServiceConstants
     {
@@ -39,6 +31,7 @@ namespace BLL.Helpers
         public enum isSucceeded
         {
             Succeeded,
+            Requires_confirmation,
         }
     }
 }

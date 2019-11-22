@@ -1,4 +1,5 @@
-﻿using BLL.Helpers;
+﻿using System.Threading.Tasks;
+using BLL.Helpers;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace PaymentAPI.Controllers
             return View();
         }
 
-        public ActionResult Charge(string stripeEmail, string stripeToken, int stripeAmount)
+        public async Task<ActionResult> Charge(string stripeEmail, string stripeToken, int stripeAmount)
         {
             var payment = new PaymentModel
             {
@@ -36,9 +37,8 @@ namespace PaymentAPI.Controllers
                 VendorId = 1,
                 Currency = "usd"
             };
-            _paymentService.Pay(PaymentServiceConstants.PaymentType.Charge, payment);
 
-            return Ok(_paymentService.Pay(PaymentServiceConstants.PaymentType.Charge, payment));
+            return Ok(await _paymentService.Pay(PaymentServiceConstants.PaymentType.Auth, payment));
         }
 
     }

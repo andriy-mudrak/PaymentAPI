@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace DAL.DBModels
 {
@@ -49,7 +46,7 @@ namespace DAL.DBModels
                 entity.Property(e => e.Response).HasMaxLength(4000); ;
 
                 entity.Property(e => e.Status)
-                    .HasMaxLength(20);
+                    .HasMaxLength(30);
 
                 entity.Property(e => e.TransactionTime).HasColumnType("datetime");
 
@@ -67,8 +64,11 @@ namespace DAL.DBModels
                     .HasName("PK__Users__Id");
 
                 entity.Property(e => e.UserId)
-                    .HasColumnName("UserID")
-                    .ValueGeneratedNever();
+                    .HasColumnName("UserID");
+
+                entity.Property(e => e.Email)
+                    .HasColumnName("Email")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.ExternalId)
                     .HasColumnName("ExternalID")

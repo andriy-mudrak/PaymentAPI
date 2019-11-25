@@ -1,0 +1,267 @@
+2019-11-12 16:37:41.295 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 16:41:03.723 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 16:41:46.057 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 16:47:46.668 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 16:47:48.713 +02:00 [INF] Status code: 200
+2019-11-12 16:47:55.162 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.162 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.162 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.162 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.162 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.300 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.555 +02:00 [INF] Status code: 404
+2019-11-12 16:47:55.573 +02:00 [INF] Status code: 404
+2019-11-12 16:53:13.310 +02:00 [ERR] Exception message: System.AggregateException: One or more errors occurred. (One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga)) ---> System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PaymentAPI.Controllers.PaymentController.Post(String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Controllers\PaymentController.cs:line 31
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+---> (Inner Exception #0) Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32<---
+<---
+ 
+2019-11-12 16:54:30.629 +02:00 [ERR] Exception message: System.AggregateException: One or more errors occurred. (One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga)) ---> System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PaymentAPI.Controllers.PaymentController.Post(String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Controllers\PaymentController.cs:line 31
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+---> (Inner Exception #0) Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32<---
+<---
+ 
+2019-11-12 17:52:27.869 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 17:52:34.546 +02:00 [INF] Status code: 200
+2019-11-12 17:52:35.294 +02:00 [INF] Status code: 404
+2019-11-12 17:52:35.294 +02:00 [INF] Status code: 404
+2019-11-12 17:52:35.294 +02:00 [INF] Status code: 404
+2019-11-12 17:52:35.328 +02:00 [INF] Status code: 404
+2019-11-12 17:52:35.586 +02:00 [INF] Status code: 404
+2019-11-12 17:52:36.336 +02:00 [INF] Status code: 404
+2019-11-12 17:52:36.399 +02:00 [INF] Status code: 404
+2019-11-12 17:52:36.431 +02:00 [INF] Status code: 404
+2019-11-12 17:55:17.759 +02:00 [ERR] Exception message: System.AggregateException: One or more errors occurred. (One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga)) ---> System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at PaymentAPI.Controllers.PaymentController.Post(String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Controllers\PaymentController.cs:line 31
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22
+---> (Inner Exception #0) System.AggregateException: One or more errors occurred. (Invalid API Key provided: sk_test_****************lgga) ---> Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at DAL.Repositories.PaymentRepository.CreateTransaction(Task`1 transaction) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\DAL\Repositories\PaymentRepository.cs:line 34
+   at BLL.Services.PaymentCharge.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 41
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+---> (Inner Exception #0) Stripe.StripeException: Invalid API Key provided: sk_test_****************lgga
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 130
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at BLL.Services.PaymentCharge.<>c__DisplayClass2_0.<<Execute>b__0>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCharge.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at BLL.Helpers.RetryHelpers.CallPayment(Func`1 action, String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 47
+   at BLL.Helpers.RetryHelpers.<>c__DisplayClass0_0.<<RetryIfThrown>b__1>d.MoveNext() in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 34
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at BLL.Helpers.RetryHelpers.RetryIfThrown(Func`1 action, String type, PaymentModel payment, String isSucceeded) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Helpers\Retrying\RetryHelpers.cs:line 32<---
+<---
+ 
+2019-11-12 17:56:45.466 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 17:56:47.984 +02:00 [INF] Status code: 200
+2019-11-12 17:56:48.221 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.221 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.221 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.221 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.221 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.653 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.687 +02:00 [INF] Status code: 404
+2019-11-12 17:56:48.698 +02:00 [INF] Status code: 404
+2019-11-12 17:57:19.745 +02:00 [INF] Status code: 200
+2019-11-12 17:58:49.067 +02:00 [INF] Status code: 200
+2019-11-12 19:17:06.888 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-12 19:17:11.992 +02:00 [INF] Status code: 200
+2019-11-12 19:17:13.003 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.003 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.003 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.003 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.004 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.339 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.628 +02:00 [INF] Status code: 404
+2019-11-12 19:17:13.734 +02:00 [INF] Status code: 404

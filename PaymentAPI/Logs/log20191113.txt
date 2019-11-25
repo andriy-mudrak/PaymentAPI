@@ -1,0 +1,903 @@
+2019-11-13 12:05:24.080 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 12:05:27.524 +02:00 [INF] Status code: 200
+2019-11-13 12:05:29.122 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.122 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.122 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.126 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.153 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.646 +02:00 [INF] Status code: 404
+2019-11-13 12:05:29.724 +02:00 [INF] Status code: 404
+2019-11-13 12:07:17.367 +02:00 [INF] Status code: 200
+2019-11-13 12:08:36.131 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 12:08:38.735 +02:00 [INF] Status code: 200
+2019-11-13 12:08:38.975 +02:00 [INF] Status code: 404
+2019-11-13 12:08:38.975 +02:00 [INF] Status code: 404
+2019-11-13 12:08:38.975 +02:00 [INF] Status code: 404
+2019-11-13 12:08:38.975 +02:00 [INF] Status code: 404
+2019-11-13 12:08:38.975 +02:00 [INF] Status code: 404
+2019-11-13 12:08:39.610 +02:00 [INF] Status code: 404
+2019-11-13 12:08:39.683 +02:00 [INF] Status code: 404
+2019-11-13 12:08:39.730 +02:00 [INF] Status code: 404
+2019-11-13 14:16:24.252 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:20:19.813 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:21:51.475 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:23:45.386 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:26:01.160 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:29:07.078 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:32:39.222 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:34:13.079 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:38:30.705 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:39:47.654 +02:00 [INF] Status code: 200
+2019-11-13 14:39:47.654 +02:00 [INF] Status code: 200
+2019-11-13 14:39:48.472 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.472 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.473 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.472 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.510 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.544 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.617 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.618 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.720 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.720 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.743 +02:00 [INF] Status code: 404
+2019-11-13 14:39:48.986 +02:00 [INF] Status code: 404
+2019-11-13 14:39:49.106 +02:00 [INF] Status code: 404
+2019-11-13 14:39:49.119 +02:00 [INF] Status code: 404
+2019-11-13 14:39:49.143 +02:00 [INF] Status code: 404
+2019-11-13 14:39:49.158 +02:00 [INF] Status code: 404
+2019-11-13 14:40:51.258 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 14:40:51.321 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 14:40:51.333 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 14:40:51.339 +02:00 [ERR] Connection ID "18086456113720459285", Request ID "80000016-0002-fb00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 14:41:07.498 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 14:41:07.560 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 14:41:07.561 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 14:41:07.562 +02:00 [ERR] Connection ID "18086456113720459285", Request ID "80000017-0002-fb00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 14:42:09.461 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 14:42:09.963 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 14:42:09.964 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 14:42:09.965 +02:00 [ERR] Connection ID "18086456113720459285", Request ID "80000018-0002-fb00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 14:43:27.321 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:43:30.017 +02:00 [INF] Status code: 200
+2019-11-13 14:43:30.353 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.353 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.353 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.353 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.353 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.780 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.795 +02:00 [INF] Status code: 404
+2019-11-13 14:43:30.808 +02:00 [INF] Status code: 404
+2019-11-13 14:45:15.694 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 14:45:15.765 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 14:45:15.774 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 14:45:15.777 +02:00 [ERR] Connection ID "18014398519682531342", Request ID "8000000f-0002-fa00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 14:52:37.423 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:52:41.338 +02:00 [INF] Status code: 200
+2019-11-13 14:52:41.633 +02:00 [INF] Status code: 404
+2019-11-13 14:52:41.633 +02:00 [INF] Status code: 404
+2019-11-13 14:52:41.634 +02:00 [INF] Status code: 404
+2019-11-13 14:52:41.653 +02:00 [INF] Status code: 404
+2019-11-13 14:52:41.653 +02:00 [INF] Status code: 404
+2019-11-13 14:52:42.124 +02:00 [INF] Status code: 404
+2019-11-13 14:52:42.168 +02:00 [INF] Status code: 404
+2019-11-13 14:52:42.193 +02:00 [INF] Status code: 404
+2019-11-13 14:53:33.225 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 14:53:33.348 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 14:53:33.359 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 14:53:33.368 +02:00 [ERR] Connection ID "18230571293206380559", Request ID "80000010-0000-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 14:53:33.378 +02:00 [ERR] Connection ID "18230571293206380559", Request ID "80000010-0000-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The connection does not support MultipleActiveResultSets.
+   at System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at System.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at System.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.ClearTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.EntityFrameworkCore.DbContext.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesFeature.Dispose()
+   at Microsoft.AspNetCore.Http.HttpResponse.<>c.<.cctor>b__30_1(Object disposable)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+2019-11-13 14:54:45.644 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:54:48.241 +02:00 [INF] Status code: 200
+2019-11-13 14:54:48.432 +02:00 [INF] Status code: 404
+2019-11-13 14:54:48.434 +02:00 [INF] Status code: 404
+2019-11-13 14:54:48.435 +02:00 [INF] Status code: 404
+2019-11-13 14:54:48.436 +02:00 [INF] Status code: 404
+2019-11-13 14:54:48.467 +02:00 [INF] Status code: 404
+2019-11-13 14:54:49.088 +02:00 [INF] Status code: 404
+2019-11-13 14:54:49.169 +02:00 [INF] Status code: 404
+2019-11-13 14:54:49.204 +02:00 [INF] Status code: 404
+2019-11-13 14:56:52.360 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:56:55.781 +02:00 [INF] Status code: 200
+2019-11-13 14:56:56.589 +02:00 [INF] Status code: 404
+2019-11-13 14:56:56.589 +02:00 [INF] Status code: 404
+2019-11-13 14:56:56.589 +02:00 [INF] Status code: 404
+2019-11-13 14:56:56.589 +02:00 [INF] Status code: 404
+2019-11-13 14:56:56.661 +02:00 [INF] Status code: 404
+2019-11-13 14:56:57.217 +02:00 [INF] Status code: 404
+2019-11-13 14:56:57.386 +02:00 [INF] Status code: 404
+2019-11-13 14:58:34.271 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 14:58:36.770 +02:00 [INF] Status code: 200
+2019-11-13 14:58:37.073 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.074 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.074 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.107 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.107 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.959 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.969 +02:00 [INF] Status code: 404
+2019-11-13 14:58:37.987 +02:00 [INF] Status code: 404
+2019-11-13 15:26:42.284 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:26:46.408 +02:00 [INF] Status code: 200
+2019-11-13 15:26:46.925 +02:00 [INF] Status code: 404
+2019-11-13 15:26:46.925 +02:00 [INF] Status code: 404
+2019-11-13 15:26:46.925 +02:00 [INF] Status code: 404
+2019-11-13 15:26:46.925 +02:00 [INF] Status code: 404
+2019-11-13 15:26:46.926 +02:00 [INF] Status code: 404
+2019-11-13 15:26:47.396 +02:00 [INF] Status code: 404
+2019-11-13 15:26:47.416 +02:00 [INF] Status code: 404
+2019-11-13 15:26:47.484 +02:00 [INF] Status code: 404
+2019-11-13 15:27:47.900 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 15:27:47.988 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 15:27:47.997 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 15:27:48.003 +02:00 [ERR] Connection ID "18230571306091282442", Request ID "8000000b-0003-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 15:28:24.896 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:28:26.903 +02:00 [INF] Status code: 200
+2019-11-13 15:28:27.115 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.115 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.139 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.172 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.176 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.682 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.693 +02:00 [INF] Status code: 404
+2019-11-13 15:28:27.707 +02:00 [INF] Status code: 404
+2019-11-13 15:30:26.889 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:30:29.496 +02:00 [INF] Status code: 200
+2019-11-13 15:30:29.715 +02:00 [INF] Status code: 404
+2019-11-13 15:30:29.715 +02:00 [INF] Status code: 404
+2019-11-13 15:30:29.715 +02:00 [INF] Status code: 404
+2019-11-13 15:30:29.715 +02:00 [INF] Status code: 404
+2019-11-13 15:30:29.719 +02:00 [INF] Status code: 404
+2019-11-13 15:30:30.155 +02:00 [INF] Status code: 404
+2019-11-13 15:30:30.203 +02:00 [INF] Status code: 404
+2019-11-13 15:30:30.214 +02:00 [INF] Status code: 404
+2019-11-13 15:33:13.114 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:33:16.562 +02:00 [INF] Status code: 200
+2019-11-13 15:33:16.978 +02:00 [INF] Status code: 404
+2019-11-13 15:33:16.978 +02:00 [INF] Status code: 404
+2019-11-13 15:33:16.978 +02:00 [INF] Status code: 404
+2019-11-13 15:33:16.991 +02:00 [INF] Status code: 404
+2019-11-13 15:33:17.074 +02:00 [INF] Status code: 404
+2019-11-13 15:33:17.414 +02:00 [INF] Status code: 404
+2019-11-13 15:33:17.440 +02:00 [INF] Status code: 404
+2019-11-13 15:33:17.454 +02:00 [INF] Status code: 404
+2019-11-13 15:35:25.574 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:35:29.066 +02:00 [INF] Status code: 200
+2019-11-13 15:35:29.453 +02:00 [INF] Status code: 404
+2019-11-13 15:35:29.453 +02:00 [INF] Status code: 404
+2019-11-13 15:35:29.453 +02:00 [INF] Status code: 404
+2019-11-13 15:35:29.466 +02:00 [INF] Status code: 404
+2019-11-13 15:35:29.551 +02:00 [INF] Status code: 404
+2019-11-13 15:35:30.512 +02:00 [INF] Status code: 404
+2019-11-13 15:35:30.612 +02:00 [INF] Status code: 404
+2019-11-13 15:35:30.652 +02:00 [INF] Status code: 404
+2019-11-13 15:41:13.387 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:41:16.040 +02:00 [INF] Status code: 200
+2019-11-13 15:41:16.546 +02:00 [INF] Status code: 404
+2019-11-13 15:41:16.546 +02:00 [INF] Status code: 404
+2019-11-13 15:41:16.546 +02:00 [INF] Status code: 404
+2019-11-13 15:41:16.546 +02:00 [INF] Status code: 404
+2019-11-13 15:41:16.547 +02:00 [INF] Status code: 404
+2019-11-13 15:41:16.937 +02:00 [INF] Status code: 404
+2019-11-13 15:41:17.023 +02:00 [INF] Status code: 404
+2019-11-13 15:41:17.100 +02:00 [INF] Status code: 404
+2019-11-13 15:50:57.478 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:51:01.400 +02:00 [INF] Status code: 200
+2019-11-13 15:51:01.851 +02:00 [INF] Status code: 404
+2019-11-13 15:51:01.852 +02:00 [INF] Status code: 404
+2019-11-13 15:51:01.852 +02:00 [INF] Status code: 404
+2019-11-13 15:51:01.851 +02:00 [INF] Status code: 404
+2019-11-13 15:51:01.868 +02:00 [INF] Status code: 404
+2019-11-13 15:51:02.530 +02:00 [INF] Status code: 404
+2019-11-13 15:51:02.596 +02:00 [INF] Status code: 404
+2019-11-13 15:51:02.659 +02:00 [INF] Status code: 404
+2019-11-13 15:55:14.688 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:55:17.562 +02:00 [INF] Status code: 200
+2019-11-13 15:55:18.018 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.018 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.018 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.018 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.116 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.555 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.565 +02:00 [INF] Status code: 404
+2019-11-13 15:55:18.580 +02:00 [INF] Status code: 404
+2019-11-13 15:56:55.717 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:56:58.719 +02:00 [INF] Status code: 200
+2019-11-13 15:56:59.227 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.228 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.227 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.227 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.227 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.558 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.577 +02:00 [INF] Status code: 404
+2019-11-13 15:56:59.628 +02:00 [INF] Status code: 404
+2019-11-13 15:57:31.523 +02:00 [INF] Status code: 200
+2019-11-13 15:57:31.601 +02:00 [ERR] Failed executing DbCommand (44ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (Size = 50), @p2='?' (Size = 20), @p3='?' (Size = 1000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 20), @p7='?' (DbType = DateTime), @p8='?' (Size = 20), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([Amount], [ExternalID], [Instrument], [Metadata], [OrderID], [Response], [Status], [TransactionTime], [TransactionType], [UserID], [VendorID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [TransactionID]
+FROM [Transactions]
+WHERE @@ROWCOUNT = 1 AND [TransactionID] = scope_identity();
+System.InvalidOperationException: BeginExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+2019-11-13 15:59:40.375 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 15:59:43.597 +02:00 [INF] Status code: 200
+2019-11-13 15:59:43.846 +02:00 [INF] Status code: 404
+2019-11-13 15:59:43.847 +02:00 [INF] Status code: 404
+2019-11-13 15:59:43.847 +02:00 [INF] Status code: 404
+2019-11-13 15:59:43.846 +02:00 [INF] Status code: 404
+2019-11-13 15:59:43.912 +02:00 [INF] Status code: 404
+2019-11-13 15:59:44.379 +02:00 [INF] Status code: 404
+2019-11-13 15:59:44.403 +02:00 [INF] Status code: 404
+2019-11-13 15:59:44.438 +02:00 [INF] Status code: 404
+2019-11-13 16:00:36.865 +02:00 [INF] Status code: 200
+2019-11-13 16:00:36.879 +02:00 [ERR] Connection ID "18014398515387564070", Request ID "80000027-0001-fa00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The connection does not support MultipleActiveResultSets.
+   at System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at System.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at System.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.ClearTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.EntityFrameworkCore.DbContext.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesFeature.Dispose()
+   at Microsoft.AspNetCore.Http.HttpResponse.<>c.<.cctor>b__30_1(Object disposable)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+2019-11-13 16:02:12.063 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:02:14.917 +02:00 [INF] Status code: 200
+2019-11-13 16:02:15.386 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.386 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.386 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.439 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.439 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.888 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.902 +02:00 [INF] Status code: 404
+2019-11-13 16:02:15.920 +02:00 [INF] Status code: 404
+2019-11-13 16:02:33.923 +02:00 [INF] Status code: 200
+2019-11-13 16:02:33.930 +02:00 [ERR] Connection ID "18014398515387564076", Request ID "8000002d-0001-fa00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The connection does not support MultipleActiveResultSets.
+   at System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at System.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at System.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.ClearTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.EntityFrameworkCore.DbContext.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesFeature.Dispose()
+   at Microsoft.AspNetCore.Http.HttpResponse.<>c.<.cctor>b__30_1(Object disposable)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+2019-11-13 16:03:39.533 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:03:42.957 +02:00 [INF] Status code: 200
+2019-11-13 16:03:43.367 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.367 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.367 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.367 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.379 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.783 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.803 +02:00 [INF] Status code: 404
+2019-11-13 16:03:43.829 +02:00 [INF] Status code: 404
+2019-11-13 16:06:11.366 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:06:15.007 +02:00 [INF] Status code: 200
+2019-11-13 16:06:15.658 +02:00 [INF] Status code: 404
+2019-11-13 16:06:15.677 +02:00 [INF] Status code: 404
+2019-11-13 16:06:15.683 +02:00 [INF] Status code: 404
+2019-11-13 16:06:15.700 +02:00 [INF] Status code: 404
+2019-11-13 16:06:15.701 +02:00 [INF] Status code: 404
+2019-11-13 16:06:16.033 +02:00 [INF] Status code: 404
+2019-11-13 16:06:16.046 +02:00 [INF] Status code: 404
+2019-11-13 16:06:16.056 +02:00 [INF] Status code: 404
+2019-11-13 16:07:13.944 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:07:20.537 +02:00 [INF] Status code: 200
+2019-11-13 16:07:21.166 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.166 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.384 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.397 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.401 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.926 +02:00 [INF] Status code: 404
+2019-11-13 16:07:21.999 +02:00 [INF] Status code: 404
+2019-11-13 16:07:45.024 +02:00 [ERR] An error occurred using the connection to database 'PaymentsDbTest' on server '.\SQLEXPRESS'.
+System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=75; handshake=20417;  ---> System.ComponentModel.Win32Exception (258): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:afa77748-ac8b-4452-955f-ac76395e92aa
+Error Number:-2,State:0,Class:11
+2019-11-13 16:07:45.441 +02:00 [INF] Status code: 200
+2019-11-13 16:08:44.110 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:08:47.663 +02:00 [INF] Status code: 200
+2019-11-13 16:08:48.140 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.140 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.140 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.173 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.173 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.727 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.871 +02:00 [INF] Status code: 404
+2019-11-13 16:08:48.902 +02:00 [INF] Status code: 404
+2019-11-13 16:12:44.249 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:12:48.266 +02:00 [INF] Status code: 200
+2019-11-13 16:12:48.716 +02:00 [INF] Status code: 404
+2019-11-13 16:12:48.717 +02:00 [INF] Status code: 404
+2019-11-13 16:12:48.717 +02:00 [INF] Status code: 404
+2019-11-13 16:12:48.717 +02:00 [INF] Status code: 404
+2019-11-13 16:12:48.717 +02:00 [INF] Status code: 404
+2019-11-13 16:12:49.142 +02:00 [INF] Status code: 404
+2019-11-13 16:12:49.455 +02:00 [INF] Status code: 404
+2019-11-13 16:12:49.540 +02:00 [INF] Status code: 404
+2019-11-13 16:13:15.795 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 16:13:15.913 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 16:13:15.922 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 16:13:15.927 +02:00 [ERR] Connection ID "17942340921349636108", Request ID "8000000d-0001-f900-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 16:14:47.162 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:14:51.122 +02:00 [INF] Status code: 200
+2019-11-13 16:14:52.002 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.058 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.119 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.219 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.278 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.860 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.927 +02:00 [INF] Status code: 404
+2019-11-13 16:14:52.975 +02:00 [INF] Status code: 404
+2019-11-13 16:17:32.740 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:17:38.215 +02:00 [INF] Status code: 200
+2019-11-13 16:17:38.610 +02:00 [INF] Status code: 404
+2019-11-13 16:17:38.610 +02:00 [INF] Status code: 404
+2019-11-13 16:17:38.610 +02:00 [INF] Status code: 404
+2019-11-13 16:17:38.610 +02:00 [INF] Status code: 404
+2019-11-13 16:17:38.922 +02:00 [INF] Status code: 404
+2019-11-13 16:17:39.436 +02:00 [INF] Status code: 404
+2019-11-13 16:17:39.583 +02:00 [INF] Status code: 404
+2019-11-13 16:19:34.512 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:19:36.833 +02:00 [INF] Status code: 200
+2019-11-13 16:19:37.108 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.108 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.108 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.108 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.108 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.571 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.587 +02:00 [INF] Status code: 404
+2019-11-13 16:19:37.602 +02:00 [INF] Status code: 404
+2019-11-13 16:26:33.416 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:26:36.983 +02:00 [INF] Status code: 200
+2019-11-13 16:26:37.226 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.226 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.226 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.226 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.226 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.655 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.677 +02:00 [INF] Status code: 404
+2019-11-13 16:26:37.701 +02:00 [INF] Status code: 404
+2019-11-13 16:28:33.649 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 16:28:33.795 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 16:28:33.813 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 16:28:33.818 +02:00 [ERR] Connection ID "17870283331606675478", Request ID "80000017-0002-f800-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 16:28:33.832 +02:00 [ERR] Connection ID "17870283331606675478", Request ID "80000017-0002-f800-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The connection does not support MultipleActiveResultSets.
+   at System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at System.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at System.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.Dispose()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.ClearTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.EntityFrameworkCore.DbContext.Dispose()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.Dispose()
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesFeature.Dispose()
+   at Microsoft.AspNetCore.Http.HttpResponse.<>c.<.cctor>b__30_1(Object disposable)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+2019-11-13 16:31:17.963 +02:00 [ERR] Exception message: Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'task' with type 'System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[BLL.Models.TransactionModel],BLL.Services.PaymentService+<Pay>d__4]'. Path 'stateMachine.<>t__builder'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 16:31:18.060 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-11-13 16:31:18.061 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2019-11-13 16:31:18.076 +02:00 [ERR] Connection ID "17870283331606675478", Request ID "80000018-0002-f800-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.Internal.DefaultHttpResponse.set_ContentType(String value)
+   at PaymentAPI.Middleware.ExceptionMiddleware.HandleExceptionAsync(HttpContext context) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 35
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 29
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2019-11-13 16:32:57.140 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'DAL.DBModels.PaymentsDbContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2019-11-13 16:34:51.509 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:34:57.623 +02:00 [INF] Status code: 200
+2019-11-13 16:34:57.891 +02:00 [INF] Status code: 404
+2019-11-13 16:34:58.109 +02:00 [INF] Status code: 404
+2019-11-13 16:34:58.113 +02:00 [INF] Status code: 404
+2019-11-13 16:34:58.441 +02:00 [INF] Status code: 404
+2019-11-13 16:34:58.490 +02:00 [INF] Status code: 404
+2019-11-13 16:34:59.020 +02:00 [INF] Status code: 404
+2019-11-13 16:34:59.419 +02:00 [INF] Status code: 404
+2019-11-13 16:34:59.439 +02:00 [INF] Status code: 404
+2019-11-13 16:36:57.165 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:37:01.645 +02:00 [INF] Status code: 200
+2019-11-13 16:37:01.973 +02:00 [INF] Status code: 404
+2019-11-13 16:37:01.973 +02:00 [INF] Status code: 404
+2019-11-13 16:37:01.981 +02:00 [INF] Status code: 404
+2019-11-13 16:37:01.985 +02:00 [INF] Status code: 404
+2019-11-13 16:37:01.997 +02:00 [INF] Status code: 404
+2019-11-13 16:37:02.411 +02:00 [INF] Status code: 404
+2019-11-13 16:37:02.428 +02:00 [INF] Status code: 404
+2019-11-13 16:37:02.449 +02:00 [INF] Status code: 404
+2019-11-13 16:38:13.885 +02:00 [INF] Status code: 200
+2019-11-13 16:40:15.183 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:40:25.213 +02:00 [INF] Status code: 200
+2019-11-13 16:40:25.961 +02:00 [INF] Status code: 404
+2019-11-13 16:40:25.962 +02:00 [INF] Status code: 404
+2019-11-13 16:40:25.977 +02:00 [INF] Status code: 404
+2019-11-13 16:40:26.261 +02:00 [INF] Status code: 404
+2019-11-13 16:40:26.459 +02:00 [INF] Status code: 404
+2019-11-13 16:40:26.652 +02:00 [INF] Status code: 404
+2019-11-13 16:40:27.173 +02:00 [INF] Status code: 404
+2019-11-13 16:40:27.237 +02:00 [INF] Status code: 404
+2019-11-13 16:40:36.692 +02:00 [INF] Status code: 200
+2019-11-13 16:41:09.547 +02:00 [INF] Status code: 200
+2019-11-13 16:41:41.268 +02:00 [ERR] Exception message: System.Exception: Server can not find auth transaction
+   at BLL.Services.PaymentCapture.Execute(PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentCapture.cs:line 39
+   at BLL.Services.PaymentService.Pay(PaymentType type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\BLL\Services\PaymentService.cs:line 29
+   at PaymentAPI.Controllers.PaymentController.Post(String type, PaymentModel payment) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Controllers\PaymentController.cs:line 31
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at PaymentAPI.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\binariks\source\repos\PaymentGithub\PaymentAPI\PaymentAPI\Middleware\ExceptionMiddleware.cs:line 22 
+2019-11-13 16:43:47.895 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:43:52.792 +02:00 [INF] Status code: 200
+2019-11-13 16:43:53.177 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.177 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.191 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.210 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.210 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.763 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.817 +02:00 [INF] Status code: 404
+2019-11-13 16:43:53.874 +02:00 [INF] Status code: 404
+2019-11-13 16:44:22.544 +02:00 [INF] Status code: 200
+2019-11-13 16:47:03.898 +02:00 [WRN] Failed to determine the https port for redirect.
+2019-11-13 16:47:08.175 +02:00 [INF] Status code: 200
+2019-11-13 16:47:08.867 +02:00 [INF] Status code: 404
+2019-11-13 16:47:08.867 +02:00 [INF] Status code: 404
+2019-11-13 16:47:08.867 +02:00 [INF] Status code: 404
+2019-11-13 16:47:08.867 +02:00 [INF] Status code: 404
+2019-11-13 16:47:08.895 +02:00 [INF] Status code: 404
+2019-11-13 16:47:09.364 +02:00 [INF] Status code: 404
+2019-11-13 16:47:22.821 +02:00 [INF] Status code: 200

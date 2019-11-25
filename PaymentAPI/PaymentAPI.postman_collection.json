@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "438d3118-8e5b-4319-a461-d6b82d892de4",
+		"name": "PaymentAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:53783/api/payment?type=charge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"CardToken\":\"tok_visa\",\r\n\t\"Currency\":\"usd\",\r\n\t\"Amount\":\"1000\",\r\n\t\"UserId\":7,\r\n\t\"OrderId\":7,\r\n\t\"VendorId\":7,\r\n\t\"Email\":\"admin@ukr.net\",\r\n\t\"SaveCard\":false\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:53783/api/payment?type=charge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53783",
+					"path": [
+						"api",
+						"payment"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "charge"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:53783/api/payment?orderid=7&userid=7&vendor=7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:53783/api/payment?orderid=7&userid=7&vendor=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53783",
+					"path": [
+						"api",
+						"payment"
+					],
+					"query": [
+						{
+							"key": "orderid",
+							"value": "7"
+						},
+						{
+							"key": "userid",
+							"value": "7"
+						},
+						{
+							"key": "vendor",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:53783/api/payment?type=auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"CardToken\":\"tok_visa\",\r\n\t\"Currency\":\"usd\",\r\n\t\"Amount\":\"1000\",\r\n\t\"UserId\":6,\r\n\t\"OrderId\":6,\r\n\t\"VendorId\":6,\r\n\t\"Email\":\"admin2@ukr.net\",\r\n\t\"SaveCard\":false\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:53783/api/payment?type=auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53783",
+					"path": [
+						"api",
+						"payment"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "auth"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:53783/api/payment?type=capture",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"OrderId\":6,\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:53783/api/payment?type=capture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53783",
+					"path": [
+						"api",
+						"payment"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "capture"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

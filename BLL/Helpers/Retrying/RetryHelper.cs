@@ -18,7 +18,7 @@ namespace BLL.Helpers
             _mappingProvider = mappingProvider;
         }
         public async Task<IEnumerable<TransactionDTO>> RetryIfThrown(Func<Task<TransactionDTO>> action, PaymentServiceConstants.PaymentType type, 
-            PaymentModel payment, PaymentServiceConstants.isSucceeded isSucceeded, int triesNumber = RetryConstants.NUMBER_OF_TRIES)
+            PaymentModel payment, PaymentServiceConstants.IsSucceeded isSucceeded, int triesNumber = RetryConstants.NUMBER_OF_TRIES)
         {
             List<TransactionDTO> transactions = new List<TransactionDTO>(3);
             var timeDelay = RetryConstants.DELAY;

@@ -7,20 +7,20 @@ namespace BLL.Helpers.Mapping
 
     public class MappingProvider : IMappingProvider
     {
-        private readonly Dictionary<PaymentServiceConstants.PaymentMappingType, IMappingTransaction> MAPPING;
+        private readonly Dictionary<PaymentServiceConstants.PaymentMappingType, IMappingTransaction> _mapping;
 
         public MappingProvider(MappingResolver serviceAccessor)
         {
-            MAPPING = new Dictionary<PaymentServiceConstants.PaymentMappingType, IMappingTransaction>()
+            _mapping = new Dictionary<PaymentServiceConstants.PaymentMappingType, IMappingTransaction>()
             {
-                {PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded)},
-                {PaymentServiceConstants.PaymentMappingType.Stripe_Refund, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Stripe_Refund)},
+                {PaymentServiceConstants.PaymentMappingType.StripeSucceeded, serviceAccessor(PaymentServiceConstants.PaymentMappingType.StripeSucceeded)},
+                {PaymentServiceConstants.PaymentMappingType.StripeRefund, serviceAccessor(PaymentServiceConstants.PaymentMappingType.StripeRefund)},
                 {PaymentServiceConstants.PaymentMappingType.Failed, serviceAccessor(PaymentServiceConstants.PaymentMappingType.Failed)},
             };
         }
         public IMappingTransaction GetMappingOperation(PaymentServiceConstants.PaymentMappingType mappingType)
         {
-            return MAPPING[mappingType];
+            return _mapping[mappingType];
         }
     }
 }

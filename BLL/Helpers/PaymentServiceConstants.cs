@@ -11,7 +11,7 @@
         public const string ORDER = "order";
         public const string VENDOR = "vendor";
         public const string USER = "user";
-        
+
         public enum PaymentType
         {
             Auth,
@@ -20,18 +20,17 @@
             Refund,
             Default
         }
-
+        
         public enum PaymentMappingType
         {
-            Stripe_Succeeded,
-            Stripe_Refund,
+            StripeSucceeded,
+            StripeRefund,
             Failed
         }
 
-        public enum isSucceeded
+        public enum IsSucceeded
         {
             Succeeded,
-            Requires_confirmation,
         }
     }
 }

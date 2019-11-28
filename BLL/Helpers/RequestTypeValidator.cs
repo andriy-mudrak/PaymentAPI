@@ -5,9 +5,9 @@ namespace BLL.Helpers
 {
     public static class RequestTypeValidator
     {
-        public static bool TypeValidation(string type, PaymentModel model)
+        public static bool TypeValidation(PaymentModel model)
         {
-            switch (type)
+            switch (model.Type)
             {
                 case PaymentServiceConstants.CHARGE: return CreationPayment(model);
                 case PaymentServiceConstants.AUTH: return CreationPayment(model);
@@ -34,7 +34,6 @@ namespace BLL.Helpers
             bool isChargeModel = true;
             isChargeModel= charge.Email.Any();
             isChargeModel = !charge.Amount.IsZero();
-            isChargeModel = charge.CardToken.Any();
             isChargeModel = !charge.UserId.IsZero();
             isChargeModel = !charge.OrderId.IsZero();
 

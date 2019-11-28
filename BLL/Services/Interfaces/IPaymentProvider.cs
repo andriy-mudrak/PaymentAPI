@@ -4,6 +4,6 @@ namespace BLL.Services.Interfaces
 {
     public interface IPaymentProvider
     {
-        IPaymentExecute GetPaymentOperation(PaymentServiceConstants.PaymentType type);
+        PaymentExecuteBase GetPaymentOperation(PaymentServiceConstants.PaymentType type);
     }
 }

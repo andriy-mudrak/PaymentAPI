@@ -1,4 +1,6 @@
-﻿namespace BLL.Models
+﻿using BLL.Helpers.Attributes;
+
+namespace BLL.Models
 {
     public class PaymentModel
     {
@@ -10,5 +12,6 @@
         public string  Email { get; set; }
         public bool SaveCard { get; set; }
         public int VendorId { get; set; }
+        public string Type { get; set; }
     }
 }

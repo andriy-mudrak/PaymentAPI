@@ -23,7 +23,7 @@ namespace BLL.Services.Interfaces
             RetryHelper = retryHelper;
         }
 
-        protected async Task<IEnumerable<TransactionDTO>> ExecuteAndSave(Func<Task<TransactionDTO>> action, PaymentServiceConstants.PaymentType type, 
+        protected virtual async Task<IEnumerable<TransactionDTO>> ExecuteAndSave(Func<Task<TransactionDTO>> action, PaymentServiceConstants.PaymentType type, 
             PaymentModel payment, PaymentServiceConstants.IsSucceeded succeeded)
         {
             var transaction = await RetryHelper.RetryIfThrown(action, type, payment, succeeded);

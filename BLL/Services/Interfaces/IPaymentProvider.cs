@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-using BLL.Helpers;
+﻿using BLL.Helpers;
 
 namespace BLL.Services.Interfaces
 {
     public interface IPaymentProvider
     {
-        IPaymentExecute GetPaymentOperation(PaymentServiceConstants.PaymentType type);
+        PaymentExecuteBase GetPaymentOperation(PaymentServiceConstants.PaymentType type);
     }
 }

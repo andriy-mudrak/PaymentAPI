@@ -4,48 +4,49 @@ using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping.Interfaces;
+using BLL.Helpers.UserUpdating.Interfaces;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using DAL.DBModels;
-using Newtonsoft.Json;
 using Stripe;
 
 namespace BLL.Services
 {
-    public class PaymentCharge : IPaymentExecute
+    public class PaymentCharge : PaymentExecuteBase
     {
-        private readonly IPaymentRepository _paymentRepository;
-        private readonly IMappingProvider _mappingProvider;
-        private readonly IRetryHelper _retryHelper;
+        private readonly IUserModifier _userModifier;
 
-
-        public PaymentCharge(IPaymentRepository paymentRepository, IMappingProvider mappingProvider, IRetryHelper retryHelper)
+        public PaymentCharge(ITransactionRepository paymentRepository, IMappingProvider mappingProvider, IRetryHelper retryHelper,
+            IUserModifier userModifier)
+            : base(paymentRepository, mappingProvider, retryHelper)
         {
-            _paymentRepository = paymentRepository;
-            _mappingProvider = mappingProvider;
-            _retryHelper = retryHelper;
+            _userModifier = userModifier;
         }
 
-        public async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
+        public override async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
+            var user = await _userModifier.GetOrCreateUser(payment);
+
             var options = new ChargeCreateOptions
             {
                 Amount = payment.Amount,
                 Currency = payment.Currency,
-                Source = payment.CardToken
+                Customer = user.ExternalId,
             };
             var service = new ChargeService();
-          
-            var transaction = await _retryHelper.RetryIfThrown(async () =>
-            {
-                var result = await service.CreateAsync(options);
-                return _mappingProvider.GetMappingOperation(PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded)
-                    .Map(PaymentServiceConstants.PaymentType.Charge, payment, result, result.Created);
+            var action = new Func<Task<TransactionDTO>>(
+                async () =>
+                {
+                    var result = await service.CreateAsync(options);
+                    return MappingProvider
+                        .GetMappingOperation(PaymentServiceConstants.PaymentMappingType.StripeSucceeded)
+                        .Map(PaymentServiceConstants.PaymentType.Charge, payment, result, result.Created);
 
-            }, PaymentServiceConstants.PaymentType.Charge, payment, PaymentServiceConstants.isSucceeded.Succeeded);
+                });
 
-            return await _paymentRepository.CreateTransactions(transaction); ;
+            return await ExecuteAndSave(action, PaymentServiceConstants.PaymentType.Charge, payment,
+                PaymentServiceConstants.IsSucceeded.Succeeded);
         }
     }
 }

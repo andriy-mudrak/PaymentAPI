@@ -10,7 +10,7 @@ namespace BLL.Helpers.Interfaces
     {
         Task<IEnumerable<TransactionDTO>> RetryIfThrown(Func<Task<TransactionDTO>> action,
             PaymentServiceConstants.PaymentType type,
-            PaymentModel payment, PaymentServiceConstants.isSucceeded isSucceeded,
+            PaymentModel payment, PaymentServiceConstants.IsSucceeded isSucceeded,
             int triesNumber = RetryConstants.NUMBER_OF_TRIES);
     }
 }

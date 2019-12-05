@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using BLL.Helpers.Mapping;
-using BLL.Helpers.Mapping.Interfaces;
-using BLL.Services;
-using BLL.Services.Interfaces;
-using Stripe;
-
-namespace BLL.Helpers
+﻿namespace BLL.Helpers
 {
     public static class PaymentServiceConstants
     {
@@ -19,7 +11,7 @@ namespace BLL.Helpers
         public const string ORDER = "order";
         public const string VENDOR = "vendor";
         public const string USER = "user";
-        
+
         public enum PaymentType
         {
             Auth,
@@ -28,15 +20,15 @@ namespace BLL.Helpers
             Refund,
             Default
         }
-
+        
         public enum PaymentMappingType
         {
-            Stripe_Succeeded,
-            Stripe_Refund,
+            StripeSucceeded,
+            StripeRefund,
             Failed
         }
 
-        public enum isSucceeded
+        public enum IsSucceeded
         {
             Succeeded,
         }

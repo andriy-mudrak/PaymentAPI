@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using BLL.Helpers;
+using BLL.Helpers.Exceptions;
 using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping;
 using BLL.Helpers.Mapping.Interfaces;
+using BLL.Helpers.Queries;
+using BLL.Helpers.Queries.Interfaces;
+using BLL.Helpers.UserUpdating;
+using BLL.Helpers.UserUpdating.Interfaces;
 using BLL.Services;
 using BLL.Services.Interfaces;
 using DAL.Repositories;
@@ -17,7 +21,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DAL.DBModels;
+using FluentValidation.AspNetCore;
 using Newtonsoft.Json;
+using PaymentAPI.Middleware;
+using Serilog;
 using Stripe;
 
 namespace PaymentAPI
@@ -26,6 +33,10 @@ namespace PaymentAPI
     {
         public Startup(IConfiguration configuration)
         {
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                .CreateLogger();
+
             Configuration = configuration;
         }
 
@@ -47,13 +58,16 @@ namespace PaymentAPI
 
             services.AddDbContext<PaymentsDbContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings:DefaultConnection").Value));
 
-            services.AddTransient<IMappingProvider, MappingProvider>();
+            services.AddTransient<IMappingProvider, MappingProvider>(); 
             services.AddTransient<IRetryHelper, RetryHelper>();
             services.AddTransient<IPaymentProvider, PaymentProvider>();
-
+            services.AddTransient<IUserModifier, UserModifier>();
+            services.AddTransient<ITransactionQueryCreator, TransactionQueryCreator>();
+            services.AddTransient<IUserQueryCreator, UserQueryCreator>();
 
             services.AddTransient<IPaymentService, PaymentService>();
-            services.AddTransient<IPaymentRepository, PaymentRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddScoped<MappingStripeSucceeded<Charge>>();
             services.AddScoped<MappingStripeRefund<Refund>>();
@@ -63,14 +77,14 @@ namespace PaymentAPI
             {
                 switch (key)
                 {
-                    case PaymentServiceConstants.PaymentMappingType.Stripe_Succeeded:
+                    case PaymentServiceConstants.PaymentMappingType.StripeSucceeded:
                         return serviceProvider.GetService<MappingStripeSucceeded<Charge>>();
-                    case PaymentServiceConstants.PaymentMappingType.Stripe_Refund:
+                    case PaymentServiceConstants.PaymentMappingType.StripeRefund:
                         return serviceProvider.GetService<MappingStripeRefund<Refund>>();
                     case PaymentServiceConstants.PaymentMappingType.Failed:
                         return serviceProvider.GetService<MappingPaymentFailed<string>>();
                     default:
-                        throw new KeyNotFoundException();
+                        throw new NotValidMappingOperationException();
                 }
             });
 
@@ -92,11 +106,13 @@ namespace PaymentAPI
                     case PaymentServiceConstants.PaymentType.Refund:
                         return serviceProvider.GetService<PaymentRefund>();
                     default:
-                        throw new KeyNotFoundException();
+                        throw new NotValidPaymentOperationException();
                 }
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddFluentValidation(); ;
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -106,10 +122,12 @@ namespace PaymentAPI
                 app.UseDeveloperExceptionPage();
             }
             else
-            {
+            { 
                 app.UseHsts();
             }
-            
+            app.UseSerilogRequestLogging();
+
+            app.UseExceptionMiddleware();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

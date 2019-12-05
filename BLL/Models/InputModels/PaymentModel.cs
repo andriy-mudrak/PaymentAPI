@@ -1,7 +1,10 @@
-﻿namespace BLL.Models
+﻿using BLL.Helpers.Attributes;
+
+namespace BLL.Models
 {
     public class PaymentModel
     {
+        [LogOff]
         public string CardToken { get; set; }
         public string Currency { get; set; }
         public long Amount { get; set; }
@@ -10,5 +13,6 @@
         public string  Email { get; set; }
         public bool SaveCard { get; set; }
         public int VendorId { get; set; }
+        public string Type { get; set; }
     }
 }

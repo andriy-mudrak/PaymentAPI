@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using BLL.Helpers;
 using BLL.Services.Interfaces;
 
 namespace BLL.Services
 {
-    public delegate IPaymentExecute ServiceResolver(PaymentServiceConstants.PaymentType key);
-
+    public delegate PaymentExecuteBase ServiceResolver(PaymentServiceConstants.PaymentType key);
     public class PaymentProvider : IPaymentProvider
     {
-        private readonly Dictionary<PaymentServiceConstants.PaymentType, IPaymentExecute> PAYMENT_OPERATIONS;
+        private readonly Dictionary<PaymentServiceConstants.PaymentType, PaymentExecuteBase> _paymentOperations;
 
         public PaymentProvider(ServiceResolver serviceAccessor)
         {
-            PAYMENT_OPERATIONS = new Dictionary<PaymentServiceConstants.PaymentType, IPaymentExecute>()
+            _paymentOperations = new Dictionary<PaymentServiceConstants.PaymentType, PaymentExecuteBase>()
             {
                 {PaymentServiceConstants.PaymentType.Auth, serviceAccessor(PaymentServiceConstants.PaymentType.Auth)},
                 {PaymentServiceConstants.PaymentType.Charge, serviceAccessor(PaymentServiceConstants.PaymentType.Charge)},
@@ -22,9 +20,9 @@ namespace BLL.Services
             };
         }
 
-        public IPaymentExecute GetPaymentOperation(PaymentServiceConstants.PaymentType type)
+        public PaymentExecuteBase GetPaymentOperation(PaymentServiceConstants.PaymentType type)
         {
-            return PAYMENT_OPERATIONS[type];
+            return _paymentOperations[type];
         }
     }
 }

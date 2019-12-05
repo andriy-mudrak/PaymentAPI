@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.Models;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BLL.Helpers;
+using PaymentAPI.Helpers.Attributes;
 
 namespace PaymentAPI.Controllers
 {
@@ -21,16 +21,19 @@ namespace PaymentAPI.Controllers
 
         // POST: api/Payment
         [HttpPost]
-        public async Task<IActionResult> Post([FromQuery]string type, [FromBody] PaymentModel payment)
+        [Logging]
+        public async Task<IActionResult> Post([FromBody] PaymentModel payment)
         {
-            if (RequestTypeValidator.TypeValidation(type, payment))
+            if (RequestTypeValidator.TypeValidation(payment))
             {
-                var paymentType = RequestTypeValidator.PaymentChecker(type);
-                if (paymentType == PaymentServiceConstants.PaymentType.Default) return BadRequest("Please check type of your entity");
+                var paymentType = RequestTypeValidator.PaymentChecker(payment.Type);
+                if (paymentType == PaymentServiceConstants.PaymentType.Default)
+                    return BadRequest("Please check type of your entity");
 
                 return Ok(await _paymentService.Pay(paymentType, payment));
             }
-            else return BadRequest("Please check your entity");
+            else
+                return BadRequest("Please check your entity");
         }
 
         [HttpGet]

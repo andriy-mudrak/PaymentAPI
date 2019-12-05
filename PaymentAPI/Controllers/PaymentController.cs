@@ -4,6 +4,7 @@ using BLL.Models;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BLL.Helpers;
+using PaymentAPI.Helpers.Attributes;
 
 namespace PaymentAPI.Controllers
 {
@@ -20,7 +21,7 @@ namespace PaymentAPI.Controllers
 
         // POST: api/Payment
         [HttpPost]
-
+        [Logging]
         public async Task<IActionResult> Post([FromBody] PaymentModel payment)
         {
             if (RequestTypeValidator.TypeValidation(payment))

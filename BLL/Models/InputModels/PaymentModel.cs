@@ -4,6 +4,7 @@ namespace BLL.Models
 {
     public class PaymentModel
     {
+        [LogOff]
         public string CardToken { get; set; }
         public string Currency { get; set; }
         public long Amount { get; set; }

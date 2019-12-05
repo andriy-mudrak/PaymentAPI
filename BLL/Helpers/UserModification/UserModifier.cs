@@ -11,20 +11,19 @@ namespace BLL.Helpers.UserUpdating
 {
     public class UserModifier: IUserModifier
     {
-        private readonly ITransactionRepository _paymentRepository;
         private readonly IUserRepository _userRepository;
         private readonly IUserQueryCreator _userQueryCreator;
 
-        public UserModifier(ITransactionRepository paymentRepository, IUserRepository userRepository, IUserQueryCreator userQueryCreator)
+        public UserModifier(IUserRepository userRepository, IUserQueryCreator userQueryCreator)
         {
-            _paymentRepository = paymentRepository;
             _userRepository = userRepository;
             _userQueryCreator = userQueryCreator;
         }
 
         public async Task<UserDTO> GetOrCreateUser(PaymentModel payment)
         {
-            return  (await _userRepository.GetUser(await _userQueryCreator.GetUser(payment.Email))).LastOrDefault() ?? await CreateUser(payment);
+            var query = await _userQueryCreator.GetUser(payment.Email);
+            return  (await _userRepository.GetUser(query)).LastOrDefault() ?? await CreateUser(payment);
         }
 
         private async Task<UserDTO> CreateUser(PaymentModel payment)

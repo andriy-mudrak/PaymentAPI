@@ -2,6 +2,9 @@
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using PaymentAPI.Helpers.Constants;
+using PaymentAPI.Models;
 using Serilog;
 
 namespace PaymentAPI.Middleware
@@ -34,11 +37,10 @@ namespace PaymentAPI.Middleware
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            return context.Response.WriteAsync(new 
+            return context.Response.WriteAsync(JsonConvert.SerializeObject(new ErrorInfo
             {
-                Message = "We are currently experiencing some issues. Please try again later."
-            }.ToString());
+                Message = MiddlewareConstants.STANDART_ERROR_MESSAGE,
+            }));
         }
-
     }
 }

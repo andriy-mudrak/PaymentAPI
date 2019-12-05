@@ -10,7 +10,7 @@ namespace BLL.Helpers.Queries
     {
         public async Task<Expression<Func<UserDTO, bool>>> GetUser(string email)
         {
-            return dto => email == null || dto.Email == email;
+            return dto => email != null && dto.Email == email;
         }
     }
 }

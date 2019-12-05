@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using BLL.Helpers.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Serilog;
 
@@ -23,15 +24,19 @@ namespace PaymentAPI.Middleware
                 var statusCode = httpContext.Response?.StatusCode;
                 Log.Information($"Status code: {statusCode}");
             }
+            catch (NotValidModelException ex)
+            {
+                await HandleExceptionAsync(httpContext, ex);
+            }
             catch (Exception ex)
             {
-                Log.Error($"Exception message: {ex} ");
-                await HandleExceptionAsync(httpContext);
+                await HandleExceptionAsync(httpContext, ex);
             }
         }
 
-        private Task HandleExceptionAsync(HttpContext context)
+        private Task HandleExceptionAsync(HttpContext context, Exception message)
         {
+            Log.Error($"Exception message: {message} ");
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             return context.Response.WriteAsync(new 
@@ -39,6 +44,5 @@ namespace PaymentAPI.Middleware
                 Message = "We are currently experiencing some issues. Please try again later."
             }.ToString());
         }
-
     }
 }

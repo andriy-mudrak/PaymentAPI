@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 using BLL.Helpers;
+using BLL.Helpers.Exceptions;
 using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping;
 using BLL.Helpers.Mapping.Interfaces;
@@ -20,6 +21,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DAL.DBModels;
+using FluentValidation.AspNetCore;
 using Newtonsoft.Json;
 using PaymentAPI.Middleware;
 using Serilog;
@@ -82,7 +84,7 @@ namespace PaymentAPI
                     case PaymentServiceConstants.PaymentMappingType.Failed:
                         return serviceProvider.GetService<MappingPaymentFailed<string>>();
                     default:
-                        throw new KeyNotFoundException();
+                        throw new NotValidMappingOperationException();
                 }
             });
 
@@ -104,11 +106,13 @@ namespace PaymentAPI
                     case PaymentServiceConstants.PaymentType.Refund:
                         return serviceProvider.GetService<PaymentRefund>();
                     default:
-                        throw new KeyNotFoundException();
+                        throw new NotValidPaymentOperationException();
                 }
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddFluentValidation(); ;
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using BLL.Helpers.Exceptions;
 using BLL.Helpers.Queries.Interfaces;
 using BLL.Helpers.UserUpdating.Interfaces;
 using BLL.Models;
@@ -9,7 +10,7 @@ using Stripe;
 
 namespace BLL.Helpers.UserUpdating
 {
-    public class UserModifier: IUserModifier
+    public class UserModifier : IUserModifier
     {
         private readonly ITransactionRepository _paymentRepository;
         private readonly IUserRepository _userRepository;
@@ -24,7 +25,10 @@ namespace BLL.Helpers.UserUpdating
 
         public async Task<UserDTO> GetOrCreateUser(PaymentModel payment)
         {
-            return  (await _userRepository.GetUser(await _userQueryCreator.GetUser(payment.Email))).LastOrDefault() ?? await CreateUser(payment);
+            if (payment.Email == null) throw new NotValidModelException();
+
+            var query = await _userQueryCreator.GetUser(payment.Email);
+            return (await _userRepository.GetUser(query)).LastOrDefault() ?? await CreateUser(payment);
         }
 
         private async Task<UserDTO> CreateUser(PaymentModel payment)

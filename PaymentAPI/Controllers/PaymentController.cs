@@ -34,7 +34,6 @@ namespace PaymentAPI.Controllers
             }
             else
                 return BadRequest("Please check your entity");
-
         }
 
         [HttpGet]

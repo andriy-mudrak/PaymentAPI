@@ -14,8 +14,8 @@ namespace BLL.Helpers.Queries
             return dto => (orderId.IsZero() || dto.OrderId == orderId)
                           && (userId.IsZero() || dto.UserId == userId)
                           && (vendorId.IsZero() || dto.VendorId == vendorId)
-                          && (endDate == null || dto.TransactionTime < endDate)
-                          && (startDate == null || dto.TransactionTime > startDate);
+                          && (endDate == null || dto.TransactionTime <= endDate)
+                          && (startDate == null || dto.TransactionTime >= startDate);
         }
 
 

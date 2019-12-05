@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Helpers;
+using BLL.Helpers.Exceptions;
 using BLL.Helpers.Interfaces;
 using BLL.Helpers.Mapping.Interfaces;
 using BLL.Helpers.Queries.Interfaces;
@@ -26,6 +27,7 @@ namespace BLL.Services
         public override async Task<IEnumerable<TransactionDTO>> Execute(PaymentModel payment)
         {
             var customer = (await PaymentRepository.GetTransactions(await _queryCreator.GetTransactionForRefund(payment.OrderId))).LastOrDefault();
+            if (customer == null) throw new CustomerNotFoundException();
 
             var service = new RefundService();
 

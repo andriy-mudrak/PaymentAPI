@@ -36,7 +36,7 @@ namespace DAL.Repositories
 
         public async Task<IEnumerable<UserDTO>> GetUser(Expression<Func<UserDTO, bool>> predicate)
         {
-            return await _context.Users.Select(a => a).Where(predicate).ToListAsync();
+            return await _context.Users.Where(predicate).ToListAsync();
         }
     }
 }

@@ -1,18 +1,31 @@
-﻿using BLL.Models;
+﻿using BLL.Helpers.Validators;
+using BLL.Models;
 using Microsoft.EntityFrameworkCore.Internal;
 
 namespace BLL.Helpers
 {
     public static class RequestTypeValidator
     {
-        public static bool TypeValidation(PaymentModel model)
+        public static bool TypeValidation(PaymentModel payment)
         {
-            switch (model.Type)
+            switch (payment.Type)
             {
-                case PaymentServiceConstants.CHARGE: return CreationPayment(model);
-                case PaymentServiceConstants.AUTH: return CreationPayment(model);
-                case PaymentServiceConstants.CAPTURE: return UpdationPayment(model);
-                case PaymentServiceConstants.REFUND: return UpdationPayment(model);
+                case PaymentServiceConstants.CHARGE:
+                case PaymentServiceConstants.AUTH:
+                    {
+                        var validator = new PaymentCreatingValidator();
+                        var test = validator.Validate(payment);
+                        return test.IsValid;
+                    }
+
+                case PaymentServiceConstants.CAPTURE:
+                case PaymentServiceConstants.REFUND:
+                    {
+                        var validator = new PaymentUpdatingValidator();
+                        var test = validator.Validate(payment);
+                        return test.IsValid;
+                    }
+
                 default: return false;
             }
         }
@@ -27,25 +40,6 @@ namespace BLL.Helpers
                 case PaymentServiceConstants.REFUND: return PaymentServiceConstants.PaymentType.Refund;
                 default: return PaymentServiceConstants.PaymentType.Default;
             }
-        }
-
-        private static bool CreationPayment(PaymentModel charge)
-        {
-            bool isChargeModel = true;
-            isChargeModel= charge.Email.Any();
-            isChargeModel = !charge.Amount.IsZero();
-            isChargeModel = !charge.UserId.IsZero();
-            isChargeModel = !charge.OrderId.IsZero();
-
-            return isChargeModel;
-        }
-
-        private static bool UpdationPayment(PaymentModel charge)
-        {
-            bool isChargeModel = true;
-            isChargeModel = !charge.OrderId.IsZero();
-
-            return isChargeModel;
         }
     }
 }

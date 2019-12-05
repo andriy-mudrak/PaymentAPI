@@ -28,7 +28,7 @@ namespace DAL.Repositories
 
         public async Task<IEnumerable<TransactionDTO>> GetTransactions(Expression<Func<TransactionDTO, bool>> predicate)
         {
-            return await _context.Transactions.Select(a => a).Where(predicate).ToListAsync();
+            return await _context.Transactions.Where(predicate).ToListAsync();
         }
     }
 }

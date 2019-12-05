@@ -20,8 +20,8 @@ namespace BLL.Tests.HelpersTests.MappingTests
             //Arrange
             var response = new Refund()
             {
-                Status = "string",
-                Id = "some id",
+                Status = "succeeded",
+                Id = "ref_Jasdjklw3Sjda2Sla",
             };
 
             var map = new MappingStripeRefund<Refund>();

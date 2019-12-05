@@ -10,17 +10,25 @@ namespace BLL.Tests.HelpersTests.ExtensionsTests
         [TestMethod]
         public void IsZero_Zero_Success()
         {
-            int actual = 0;
+            //Arrange
+            int zero = 0;
+            //Act
+            bool actual = zero.IsZero();
             bool expected = true;
-            Assert.AreEqual(expected, actual.IsZero());
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void IsZero_NotZero_Success()
         {
-            int actual = 1;
-            bool expected = false;
-            Assert.AreEqual(expected, actual.IsZero());
+            //Arrange
+            int notZero = 0;
+            //Act
+            bool actual = notZero.IsZero();
+            bool expected = true;
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }

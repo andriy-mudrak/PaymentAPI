@@ -1,5 +1,4 @@
-﻿using BLL.Helpers.Attributes;
-
+﻿
 namespace BLL.Models
 {
     public class PaymentModel
